@@ -1,0 +1,175 @@
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\MainMenu.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Meteoro\0.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Meteoro\1.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Meteoro\2.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Meteoro\3.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\player.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Left\0.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Left\1.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Left\2.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Right\0.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Right\1.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Ship\Right\2.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Win.png
+C:\Users\lauti\Downloads\Base\bin\Debug\MyGame.exe.config
+C:\Users\lauti\Downloads\Base\bin\Debug\MyGame.exe
+C:\Users\lauti\Downloads\Base\bin\Debug\MyGame.pdb
+C:\Users\lauti\Downloads\Base\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\lauti\Downloads\Base\obj\Debug\Asteroid Assault.csproj.SuggestedBindingRedirects.cache
+C:\Users\lauti\Downloads\Base\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\lauti\Downloads\Base\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\lauti\Downloads\Base\obj\Debug\MyGame.exe
+C:\Users\lauti\Downloads\Base\obj\Debug\MyGame.pdb
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Lose.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\BackGround.png
+C:\Users\lauti\Downloads\Base\bin\Debug\assets\Game.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\BackGround.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Game.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Lose.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\MainMenu.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Meteoro\0.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Meteoro\1.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Meteoro\2.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Meteoro\3.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\player.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Left\0.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Left\1.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Left\2.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Right\0.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Right\1.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Ship\Right\2.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\assets\Win.png
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\MyGame.exe.config
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\MyGame.exe
+C:\Users\Tomas\Downloads\Base\Base\bin\Debug\MyGame.pdb
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\MyGame.exe
+C:\Users\Tomas\Downloads\Base\Base\obj\Debug\MyGame.pdb
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\BackGround.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Game.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Lose.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\MainMenu.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Meteoro\0.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Meteoro\1.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Meteoro\2.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Meteoro\3.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\player.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Left\0.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Left\1.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Left\2.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Right\0.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Right\1.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Ship\Right\2.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Win.png
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\MyGame.exe.config
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\MyGame.exe
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\MyGame.pdb
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.SuggestedBindingRedirects.cache
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\MyGame.exe
+C:\Users\lauti\Downloads\Base\Base\obj\Debug\MyGame.pdb
+C:\Users\lauti\Downloads\Base\Base\bin\Debug\assets\Fonts\Fuente.ttf
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\BackGround.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Game.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Lose.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\MainMenu.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Meteoro\0.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Meteoro\1.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Meteoro\2.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Meteoro\3.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\player.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\0.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\1.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\2.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\0.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\1.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\2.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Win.png
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\assets\Fonts\Fuente.ttf
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\MyGame.exe.config
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\MyGame.exe
+C:\Users\alu764\Downloads\Proyecto\Proyecto\bin\Debug\MyGame.pdb
+C:\Users\alu764\Downloads\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\alu764\Downloads\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\alu764\Downloads\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\alu764\Downloads\Proyecto\Proyecto\obj\Debug\MyGame.exe
+C:\Users\alu764\Downloads\Proyecto\Proyecto\obj\Debug\MyGame.pdb
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\BackGround.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Game.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Lose.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\MainMenu.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Meteoro\0.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Meteoro\1.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Meteoro\2.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Meteoro\3.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\player.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\0.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\1.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Left\2.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\0.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\1.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Ship\Right\2.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Win.png
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\assets\Fonts\Fuente.ttf
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\MyGame.exe.config
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\MyGame.exe
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\bin\Debug\MyGame.pdb
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\obj\Debug\MyGame.exe
+C:\Users\alu764\Documents\Proyecto\Proyecto\Proyecto\obj\Debug\MyGame.pdb
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\BackGround.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Game.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Lose.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\MainMenu.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Meteoro\0.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Meteoro\1.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Meteoro\2.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Meteoro\3.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\player.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Idle\0.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Idle\1.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Idle\2.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Idle\3.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Left\0.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Left\1.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Left\2.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Right\0.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Right\1.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Ship\Right\2.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Win.png
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\assets\Fonts\Fuente.ttf
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\MyGame.exe.config
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\MyGame.exe
+C:\Users\alu765\Downloads\Proyecto(8_5)\bin\Debug\MyGame.pdb
+C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
+C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
+C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\Asteroid Assault.csproj.CopyComplete
+C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\MyGame.exe
+C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\MyGame.pdb
