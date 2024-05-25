@@ -12,6 +12,7 @@ namespace MyGame
         public event Action<Player> Ondie;
 
         public bool candie =  true;
+        private PlayerLimits playerLimits;
         static private Animation idleAnimation;
         static private Animation leftAnimation;
         static private Animation rightAnimation;
@@ -20,7 +21,7 @@ namespace MyGame
         public PlayerController controller;
         public Player(Vector2 position) : base(position)
         {
-         
+            playerLimits = new PlayerLimits(this);
             originalPosition = position;
             controller = new PlayerController(transform);
             Ondie += ResetPosition;
@@ -33,53 +34,13 @@ namespace MyGame
             base.Update();
             controller.GetInputs();
             CheckCollisions();
+            playerLimits.CheckLimits();
 
             if (Time.timeElapse > Time.winTime)
             {
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
             }
         }
-
-        // Animations
-        public void IdleAnimation()
-        {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 4; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
-                idleTextures.Add(frame);
-            }
-            idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
-            currentAnimation = idleAnimation;
-        }
-        public void LeftAnimation()
-        {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Left/{i}.png");
-                idleTextures.Add(frame);
-            }
-            leftAnimation = new Animation("Left", idleTextures, 0.2f, true);
-            currentAnimation = leftAnimation;
-        }
-        public void RightAnimation()
-        {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Right/{i}.png");
-                idleTextures.Add(frame);
-            }
-            rightAnimation = new Animation("Right", idleTextures, 0.2f, true);
-            currentAnimation = rightAnimation;
-        }
-
-        public void ResetPosition(Player player)
-        {
-            transform.SetPosition(originalPosition);
-        }
-
         private void CheckCollisions()
         {
 
@@ -118,6 +79,45 @@ namespace MyGame
                 }
 
             }
+        }
+        public void ResetPosition(Player player)
+        {
+            transform.SetPosition(originalPosition);
+        }
+
+        // Animations
+        public void IdleAnimation()
+        {
+            List<IntPtr> idleTextures = new List<IntPtr>();
+            for (int i = 0; i < 4; i++)
+            {
+                IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
+                idleTextures.Add(frame);
+            }
+            idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+            currentAnimation = idleAnimation;
+        }
+        public void LeftAnimation()
+        {
+            List<IntPtr> idleTextures = new List<IntPtr>();
+            for (int i = 0; i < 3; i++)
+            {
+                IntPtr frame = Engine.LoadImage($"assets/Ship/Left/{i}.png");
+                idleTextures.Add(frame);
+            }
+            leftAnimation = new Animation("Left", idleTextures, 0.2f, true);
+            currentAnimation = leftAnimation;
+        }
+        public void RightAnimation()
+        {
+            List<IntPtr> idleTextures = new List<IntPtr>();
+            for (int i = 0; i < 3; i++)
+            {
+                IntPtr frame = Engine.LoadImage($"assets/Ship/Right/{i}.png");
+                idleTextures.Add(frame);
+            }
+            rightAnimation = new Animation("Right", idleTextures, 0.2f, true);
+            currentAnimation = rightAnimation;
         }
 
 
