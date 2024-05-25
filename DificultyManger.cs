@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class DifficultyManager
+    public class DifficultManager
     {
         private float speed;
         public void chageSpeed(float speed) // Cambia velocidad del enemigo

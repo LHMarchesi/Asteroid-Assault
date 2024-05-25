@@ -29,12 +29,12 @@ namespace MyGame
         private void CreateAnimations()
         {
             List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 3; i++)
             {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/0.png");
+                IntPtr frame = Engine.LoadImage($"assets/Shield/{i}.png");
                 idleTextures.Add(frame);
             }
-            idleAnimation = new Animation("Idle", idleTextures, 0.1f, true);
+            idleAnimation = new Animation("Idle", idleTextures, 0.9f, true);
             currentAnimation = idleAnimation;
         }
 
