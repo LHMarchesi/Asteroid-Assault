@@ -19,7 +19,6 @@ namespace MyGame
         private IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.png");
         private IntPtr winScreen = Engine.LoadImage("assets/Win.png");
         private IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
-        Font font = new Font("assets/Fonts/Fuente.ttf", 24);
 
         private LevelManager levelManager;
         public LevelManager LevelManager => levelManager;
@@ -93,8 +92,6 @@ namespace MyGame
                 case GameStatus.game:
 
                     levelManager.Render();
-
-                    Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
 
                     break;
 

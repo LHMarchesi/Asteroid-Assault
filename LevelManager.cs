@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -10,7 +11,7 @@ namespace MyGame
 {
     public class LevelManager
     {
-
+        Font font = new Font("assets/Fonts/Fuente.ttf", 24);
         private IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
         public List<GameObject> GameObjects = new List<GameObject>();
 
@@ -49,11 +50,14 @@ namespace MyGame
 
             player.Render();
 
+
+
             for (int i = 0; i < GameObjects.Count; i++)
             {
                 GameObjects[i].Render();
             }
 
+            Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
 
 
             Engine.Show();
@@ -61,8 +65,11 @@ namespace MyGame
 
         public void EnemySpawner()
         {
+            
+
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
+            
         } // Spawnea enemigos en posicion aleatoria 
     }
 }
