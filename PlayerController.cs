@@ -22,26 +22,26 @@ namespace MyGame
                 if (Engine.KeyPress(Engine.KEY_A))
                 {
                     transform.Translate(new Vector2(-1, 0), speed);
-                //    Player.player.LeftAnimation();
+                GameManager.Instance.LevelManager.Player.LeftAnimation();
                 }
             
 
             if (Engine.KeyPress(Engine.KEY_D))
             {
                 transform.Translate(new Vector2(1, 0), speed);
-              //  Player.player.RightAnimation();
+                GameManager.Instance.LevelManager.Player.RightAnimation();
             }
 
             if (Engine.KeyPress(Engine.KEY_W))
             {
                 transform.Translate(new Vector2(0, -1), speed);
-          //      Player.player.IdleAnimation();
+                GameManager.Instance.LevelManager.Player.IdleAnimation();
             }
 
             if (Engine.KeyPress(Engine.KEY_S))
             {
                 transform.Translate(new Vector2(0, 1), speed/2);
-               //Player.player.IdleAnimation();
+                GameManager.Instance.LevelManager.Player.IdleAnimation();
             }
         }
 
