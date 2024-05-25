@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroid Assault", "Asteroid Assault.csproj", "{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{ACD85BE8-A38C-4513-B31B-93183EDC7F44}"
-	ProjectSection(SolutionItems) = preProject
-		DifficultyManager.cs = DifficultyManager.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

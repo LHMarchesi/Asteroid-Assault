@@ -15,7 +15,8 @@ namespace MyGame
         static void Main(string[] args)
         {
             Engine.Initialize();
-            
+            GameManager.Instance.Initialize();
+
             while (true)
             {
                 GameManager.Instance.Render();

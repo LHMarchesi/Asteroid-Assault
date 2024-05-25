@@ -1,52 +1,68 @@
-﻿using System;
+﻿using MyGame.assets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MyGame
 {
-    internal class LevelManager
+    public class LevelManager
     {
 
-        DifficultyManager difficultyManager = new DifficultyManager();
-        public List<Asteroid> enemyList = new List<Asteroid>();
-        public Asteroid enemy = new Asteroid(new Vector2(0, 0), Player.player);
-        private Player player;
+        private IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
+        public List<GameObject> GameObjects = new List<GameObject>();
+
+        private Player player = new Player(new Vector2(565, 520));
+        public Player Player => player;
 
         RandomNumber random = new RandomNumber();
-        private float enemyDefaultSpeed = 5;
+        private Time _time;
 
-        public LevelManager(Player _player)
+        public void Initialize()
         {
-            player = _player;
-            Vector2 initialEnemyPosition = new Vector2(random.Rand(0, 1024), random.Rand(-500, 0));
-            Asteroid initialEnemy = new Asteroid(initialEnemyPosition, player);
-            enemyList.Add(initialEnemy);
+            
+            _time.Initialize();
+            EnemySpawner();
         }
         public void Update()
         {
+            player.Update();
 
-            EnemySpawner();
+            for (int i = 0; i < GameObjects.Count; i++)
+            {
+                GameObjects[i].Update();
+            }
+
+
+
+            _time.Update();
+           
+        }
+
+        public void Render()
+        {
+            Engine.Clear();
+
+            Engine.Draw(gameScreen, 0, 0);
+
+            player.Render();
+
+            for (int i = 0; i < GameObjects.Count; i++)
+            {
+                GameObjects[i].Render();
+            }
+
+
+
+            Engine.Show();
         }
 
         public void EnemySpawner()
         {
-
-            int randomX = random.Rand(0, 1024);
-            int randomY = random.Rand(-500, 0);
-
-            foreach (Asteroid enemy in enemyList)
-            {
-                enemy.Update();
-                enemy.Render();
-                enemy.Transform.Translate(new Vector2(0, 1), enemyDefaultSpeed);
-
-                if (enemy.Transform.Position.y >= 1000)
-                {
-                    enemy.Transform.Position = new Vector2(player.Transform.Position.x, randomY); // vuelven a  aparecer arriba
-                }
-            }
+            GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
+            GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
         } // Spawnea enemigos en posicion aleatoria 
     }
 }

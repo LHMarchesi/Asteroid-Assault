@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
-    <Compile Include="DifficultyManager.cs" />
+    <Compile Include="AsteroidFactory.cs" />
+    <Compile Include="AsteroidMovement.cs" />
+    <Compile Include="DificultyManger.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />

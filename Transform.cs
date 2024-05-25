@@ -36,5 +36,11 @@ namespace MyGame
             position.x += direccion.x * speed;
             position.y += direccion.y * speed;
         }
+
+        public void SetPosition(Vector2 newPosition)
+        {
+            position.x = newPosition.x;
+            position.y = newPosition.y;
+        }
     }
 }
