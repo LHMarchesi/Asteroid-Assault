@@ -44,5 +44,10 @@ namespace MyGame
                //Player.player.IdleAnimation();
             }
         }
+
+        public void ChangeSpeed(int speed)
+        {
+            this.speed = speed;
+        }
     }
 }

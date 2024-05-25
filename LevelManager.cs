@@ -18,7 +18,6 @@ namespace MyGame
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
 
-        RandomNumber random = new RandomNumber();
         private Time _time;
 
         public void Initialize()
@@ -63,7 +62,7 @@ namespace MyGame
             Engine.Show();
         }
 
-        public void EnemySpawner()
+        public void EnemySpawner()// Spawnea enemigos en posicion aleatoria 
         {
             
 
@@ -71,6 +70,8 @@ namespace MyGame
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
             
-        } // Spawnea enemigos en posicion aleatoria 
+            GameObjects.Add(new Shield(new Vector2(100,100)));
+            GameObjects.Add(new SpeedUp(new Vector2(700,100)));
+        } 
     }
 }

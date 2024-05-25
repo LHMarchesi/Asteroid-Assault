@@ -10,16 +10,17 @@ namespace MyGame
     public class Player : GameObject
     {
         public event Action<Player> Ondie;
-       
 
+        public bool candie =  true;
         static private Animation idleAnimation;
         static private Animation leftAnimation;
         static private Animation rightAnimation;
 
         private Vector2 originalPosition;
-        private PlayerController controller;
+        public PlayerController controller;
         public Player(Vector2 position) : base(position)
         {
+         
             originalPosition = position;
             controller = new PlayerController(transform);
             Ondie += ResetPosition;
@@ -93,18 +94,26 @@ namespace MyGame
 
                 if (distanceX < sumHalfWidth && distanceY < sumHalfH) // hay colision
                 {
-                    if (gameObject is Asteroid)
+                    if (gameObject is Asteroid && candie)
                     {
                         Ondie.Invoke(this);
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
                     }
+                    else if (gameObject is Asteroid && !candie)
+                    {
+                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                        candie = true;
+                    }
+                    
+                    
 
-                    //if (gameObject is IPickuppeable pickupobj)
-                    //{
-                    //    pickupobj.PickUp();
-                    //    GameManager.Instance.LevelController.GameObjects.Remove(gameObject);
-                    //}
+                    if (gameObject is IPickuppeable pickupobj)
+                    {
+                        
+                        pickupobj.PickUp();
+                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                    }
 
                 }
 

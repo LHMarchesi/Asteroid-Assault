@@ -11,7 +11,7 @@ namespace MyGame
         private static DateTime _startTime;
         private static float _lastTimeFrame;
         public static float DeltaTime;
-        public static float winTime =  5;
+        public static float winTime =  30;
         public static float timeElapse;
 
         public void Initialize() => _startTime = DateTime.Now;

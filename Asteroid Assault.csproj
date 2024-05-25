@@ -52,6 +52,7 @@
     <Compile Include="AsteroidMovement.cs" />
     <Compile Include="DificultyManger.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="IPickuppeable.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />
     <Compile Include="Asteroid.cs" />
@@ -63,7 +64,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumber.cs" />
+    <Compile Include="Shield.cs" />
     <Compile Include="Sound.cs" />
+    <Compile Include="SpeedUp.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="Transform.cs" />
     <Compile Include="Vector2.cs" />
