@@ -10,7 +10,7 @@ namespace MyGame.assets
     {
         protected Animation currentAnimation;
         protected Transform transform;
-
+        public Transform Transform => transform;
         public GameObject(Vector2 position) {
             transform = new Transform(position, new Vector2(100, 100));
         }

@@ -50,7 +50,7 @@ namespace MyGame
                 case GameStatus.menu:
                     if (Engine.KeyPress(Engine.KEY_ESP))
                     {
-
+                        Initialize();
                         gameStart = GameStatus.game;
                     }
                     break;
@@ -64,14 +64,15 @@ namespace MyGame
                 case GameStatus.win:
                     if (Engine.KeyPress(Engine.KEY_ESP))
                     {
+                        Initialize();
                         gameStart = GameStatus.game;
-
                     }
                     break;
                 case GameStatus.lose:
                     if (Engine.KeyPress(Engine.KEY_ESP))
                     {
-                        gameStart = GameStatus.menu;
+                        Initialize();
+                        gameStart = GameStatus.game;
                     }
                     break;
                     //.....
