@@ -13,19 +13,20 @@ namespace MyGame
         private Animation idleAnimation;
         public Shield(Vector2 pos) : base(pos)
         {
-            transform = new Transform(pos, new Vector2(426,100));
+            transform = new Transform(pos, new Vector2(0,0));
             CreateAnimations();
         }
         public void PickUp()
         {
             GameManager.Instance.LevelManager.Player.candie = false;
+            GameManager.Instance.LevelManager.Player.shieldPicked = true;
             Engine.Debug("Shield Obtenido");
-
         }
         public override void Update()
         {
             base.Update();
         }
+
         private void CreateAnimations()
         {
             List<IntPtr> idleTextures = new List<IntPtr>();

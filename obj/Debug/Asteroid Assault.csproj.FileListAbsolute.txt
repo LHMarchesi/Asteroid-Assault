@@ -239,3 +239,13 @@ C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\SpeedUp\0.png
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\SpeedUp\1.png
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\SpeedUp\2.png
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\SpeedUp\3.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShieldShip\0.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Idle\0.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Idle\1.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Idle\2.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Left\0.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Left\1.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Left\2.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Right\0.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Right\1.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\ShipSpeedUp\Right\2.png

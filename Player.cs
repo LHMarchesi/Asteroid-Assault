@@ -12,6 +12,7 @@ namespace MyGame
         public event Action<Player> Ondie;
 
         public bool candie =  true;
+        public bool shieldPicked = false;
         private PlayerLimits playerLimits;
         static private Animation idleAnimation;
         static private Animation leftAnimation;
@@ -65,6 +66,8 @@ namespace MyGame
                     {
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         candie = true;
+                        shieldPicked = false;
+
                     }
                     
                     
@@ -88,36 +91,78 @@ namespace MyGame
         // Animations
         public void IdleAnimation()
         {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 4; i++)
+            if(SpeedUp.speedUp == false)
             {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
-                idleTextures.Add(frame);
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 4; i++)
+                {
+                  IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
+                   idleTextures.Add(frame);
+                }
+                 idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
             }
-            idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
-            currentAnimation = idleAnimation;
+            else if (SpeedUp.speedUp == true) 
+            {
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 3; i++)
+                {
+                    IntPtr frame = Engine.LoadImage($"assets/ShipSpeedUp/Idle/{i}.png");
+                    idleTextures.Add(frame);
+                }
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
+            }
         }
         public void LeftAnimation()
         {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
+            if (SpeedUp.speedUp == false)
             {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Left/{i}.png");
-                idleTextures.Add(frame);
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 3; i++)
+                {
+                    IntPtr frame = Engine.LoadImage($"assets/Ship/Left/{i}.png");
+                    idleTextures.Add(frame);
+                }
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
             }
-            leftAnimation = new Animation("Left", idleTextures, 0.2f, true);
-            currentAnimation = leftAnimation;
+            else if (SpeedUp.speedUp == true)
+            {
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 3; i++)
+                {
+                    IntPtr frame = Engine.LoadImage($"assets/ShipSpeedUp/Left/{i}.png");
+                    idleTextures.Add(frame);
+                }
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
+            }
         }
         public void RightAnimation()
         {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
+            if (SpeedUp.speedUp == false)
             {
-                IntPtr frame = Engine.LoadImage($"assets/Ship/Right/{i}.png");
-                idleTextures.Add(frame);
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 3; i++)
+                {
+                    IntPtr frame = Engine.LoadImage($"assets/Ship/Right/{i}.png");
+                    idleTextures.Add(frame);
+                }
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
             }
-            rightAnimation = new Animation("Right", idleTextures, 0.2f, true);
-            currentAnimation = rightAnimation;
+            else if (SpeedUp.speedUp == true)
+            {
+                List<IntPtr> idleTextures = new List<IntPtr>();
+                for (int i = 0; i < 3; i++)
+                {
+                    IntPtr frame = Engine.LoadImage($"assets/ShipSpeedUp/Right/{i}.png");
+                    idleTextures.Add(frame);
+                }
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                currentAnimation = idleAnimation;
+            }
         }
 
 

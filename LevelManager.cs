@@ -13,6 +13,7 @@ namespace MyGame
     {
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
         private IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
+        private IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
         public List<GameObject> GameObjects = new List<GameObject>();
 
         private Player player = new Player(new Vector2(565, 520));
@@ -49,6 +50,10 @@ namespace MyGame
 
             player.Render();
 
+            if (GameManager.Instance.LevelManager.Player.shieldPicked == true)
+            {
+                Engine.Draw(shieldIsPicked, player.Transform.Position.x - 25, player.Transform.Position.y - 25);
+            }
 
 
             for (int i = 0; i < GameObjects.Count; i++)
@@ -57,7 +62,6 @@ namespace MyGame
             }
 
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
-
 
             Engine.Show();
         }
@@ -72,6 +76,8 @@ namespace MyGame
             
             GameObjects.Add(new Shield(new Vector2(426,100)));
             GameObjects.Add(new SpeedUp(new Vector2(852,100)));
-        } 
+
+            
+        }
     }
 }

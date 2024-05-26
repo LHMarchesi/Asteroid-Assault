@@ -11,16 +11,18 @@ namespace MyGame
     {
         private Animation idleAnimation;
         private int newSpeed = 15;
+        static public bool speedUp = false;
         public SpeedUp(Vector2 pos) : base(pos)
         {
             
             CreateAnimations();
-            transform = new Transform(pos, new Vector2(852,100));
+            transform = new Transform(pos, new Vector2(0,0));
         }
         public void PickUp()
         {
             GameManager.Instance.LevelManager.Player.controller.ChangeSpeed(newSpeed);
             Console.WriteLine("SpeedUp");
+            speedUp = true;
         }
 
         public override void Update()
