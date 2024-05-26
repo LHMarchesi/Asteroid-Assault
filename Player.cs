@@ -61,6 +61,7 @@ namespace MyGame
                         Ondie.Invoke(this);
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
+                        SpeedUp.speedUp = false;
                     }
                     else if (gameObject is Asteroid && !candie)
                     {
@@ -68,19 +69,14 @@ namespace MyGame
                         candie = true;
                         shieldPicked = false;
 
-                    }
-                    
-                    
+                    }                
 
                     if (gameObject is IPickuppeable pickupobj)
-                    {
-                        
+                    {                        
                         pickupobj.PickUp();
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                     }
-
                 }
-
             }
         }
         public void ResetPosition(Player player)
