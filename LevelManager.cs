@@ -70,8 +70,8 @@ namespace MyGame
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
             GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
             
-            GameObjects.Add(new Shield(new Vector2(100,100)));
-            GameObjects.Add(new SpeedUp(new Vector2(700,100)));
+            GameObjects.Add(new Shield(new Vector2(426,100)));
+            GameObjects.Add(new SpeedUp(new Vector2(852,100)));
         } 
     }
 }

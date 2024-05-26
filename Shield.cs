@@ -13,7 +13,7 @@ namespace MyGame
         private Animation idleAnimation;
         public Shield(Vector2 pos) : base(pos)
         {
-            transform = new Transform(pos, new Vector2(100,100));
+            transform = new Transform(pos, new Vector2(426,100));
             CreateAnimations();
         }
         public void PickUp()

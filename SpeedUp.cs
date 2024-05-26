@@ -15,7 +15,7 @@ namespace MyGame
         {
             
             CreateAnimations();
-            transform = new Transform(pos, new Vector2(100,100));
+            transform = new Transform(pos, new Vector2(852,100));
         }
         public void PickUp()
         {
