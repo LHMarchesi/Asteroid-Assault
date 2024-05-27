@@ -31,6 +31,11 @@ namespace MyGame
         {
             base.Update();
             objectsMovement.Move();
+            if (transform.Position.y > 1000)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Remove(this);
+                Console.WriteLine("Destruido");
+            }
         }
 
         private void CreateAnimations()

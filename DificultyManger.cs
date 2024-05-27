@@ -13,8 +13,8 @@ namespace MyGame
         private DateTime timeLastSpawn;
         private DateTime timeLastShieldSpawn;
         private DateTime timeLastSpeedUpSpawn;
-        private float timeBetweenSlowAsteroids = 5f;
 
+        private float timeBetweenSlowAsteroids = 7f;
         private float timeBetweenShied = 15f;
         private float timeBetweenSpeedUp = 8f;
         public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer

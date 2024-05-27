@@ -20,7 +20,7 @@ namespace MyGame
         public SpeedUp(Vector2 pos) : base(pos)  // Constructor
         {
             CreateAnimations();
-            transform = new Transform(pos, new Vector2(0,0));
+            transform = new Transform(pos, new Vector2(0, 0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
         }
 
@@ -34,6 +34,11 @@ namespace MyGame
         {
             base.Update();
             objectsMovement.Move();
+            if (transform.Position.y > 1000)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Remove(this);
+                Console.WriteLine("Destruido");
+            }
         }
 
         private void CreateAnimations()
