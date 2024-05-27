@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    internal class ObjectsMovement
+    public class ObjectsMovement
     {
         private Transform transform;
         private int speed;
@@ -22,14 +22,11 @@ namespace MyGame
 
         public void Move()  // Movimiento hacia abajo
         {
-            if (transform.Position.y >= 1000)
-            {
-                transform.SetPosition(SetRandomPosition());
-            }
             transform.Translate(direccion, speed);
+           
         }
 
-        public static Vector2 SetRandomPosition() // ?
+        public static Vector2 SetRandomPosition() // Toma dos valores aletoreos, por encima de la pantalla, y devuelve un vector dos aleatoreo
         {
             RandomNumber random = new RandomNumber();
             int randomX = random.Rand(0, 1024);

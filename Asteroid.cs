@@ -26,6 +26,10 @@ namespace MyGame
             base.Update();
             currentAnimation.Update();
             objectsMovement.Move();
+            if (transform.Position.y >= 1000)
+            {
+                transform.SetPosition(ObjectsMovement.SetRandomPosition());
+            }
         }
 
         private void CreateAnimations()
@@ -39,14 +43,7 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 0.1f, true);
             currentAnimation = idleAnimation;
         }
-        public static Vector2 SetRandomPosition() // Toma dos valores aletoreos, por encima de la pantalla, y devuelve un vector dos aleatoreo
-        {
-            RandomNumber random = new RandomNumber();
-            int randomX = random.Rand(0, 1024);
-            int randomY = random.Rand(-1000, -200);
-            Vector2 randomPos = new Vector2(randomX, randomY);
-            return randomPos;
-        }
+      
     }
 
 

@@ -25,20 +25,20 @@ namespace MyGame
 
             if ((currentTimeAsteroid - timeLastSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
             {
-                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
-                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
+                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
+                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
                 timeLastSpawn = currentTimeAsteroid;
             }
 
             if ((currentTimeShield - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
-                GameManager.Instance.LevelManager.GameObjects.Add(new Shield(Asteroid.SetRandomPosition()));
+                GameManager.Instance.LevelManager.GameObjects.Add(new Shield(ObjectsMovement.SetRandomPosition()));
                 timeLastShieldSpawn = currentTimeShield;
             }
 
             if ((currentTimeSpeedUp - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)
             {
-                GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(Asteroid.SetRandomPosition()));
+                GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(ObjectsMovement.SetRandomPosition()));
                 timeLastSpeedUpSpawn = currentTimeSpeedUp;
             }
         }
