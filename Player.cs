@@ -15,8 +15,7 @@ namespace MyGame
         public bool shieldPicked = false;
         private PlayerLimits playerLimits;
         static private Animation idleAnimation;
-        static private Animation leftAnimation;
-        static private Animation rightAnimation;
+       
 
         private Vector2 originalPosition;
         public PlayerController controller;

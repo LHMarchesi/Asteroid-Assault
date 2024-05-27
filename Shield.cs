@@ -9,12 +9,14 @@ namespace MyGame
 {
     public class Shield : GameObject, IPickuppeable
     {
-       
+        private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
+        private int shieldSpeed = 5;
         public Shield(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(0,0));
             CreateAnimations();
+            objectsMovement = new ObjectsMovement(transform, shieldSpeed);
         }
         public void PickUp()
         {
@@ -25,6 +27,7 @@ namespace MyGame
         public override void Update()
         {
             base.Update();
+            objectsMovement.Move();
         }
 
         private void CreateAnimations()

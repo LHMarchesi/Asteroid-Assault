@@ -18,14 +18,15 @@ namespace MyGame
 
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
+        private DifficultManager difficultManager = new DifficultManager();
 
         private Time _time;
-
+        
         public void Initialize()
         {
-            
+
             _time.Initialize();
-            EnemySpawner();
+
         }
         public void Update()
         {
@@ -36,10 +37,9 @@ namespace MyGame
                 GameObjects[i].Update();
             }
 
-
-
+            difficultManager.Spawner();
             _time.Update();
-           
+
         }
 
         public void Render()
@@ -66,18 +66,6 @@ namespace MyGame
             Engine.Show();
         }
 
-        public void EnemySpawner()// Spawnea enemigos en posicion aleatoria 
-        {
-            
-
-            GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
-            GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
-            GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
-            
-            GameObjects.Add(new Shield(new Vector2(426,100)));
-            GameObjects.Add(new SpeedUp(new Vector2(852,100)));
-
-            
-        }
+       
     }
 }

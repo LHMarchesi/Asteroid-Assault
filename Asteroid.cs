@@ -11,14 +11,14 @@ namespace MyGame
     public class Asteroid : GameObject
     {
         private Animation idleAnimation;
-        private AsteroidMovement asteroidMovement;
+        private ObjectsMovement objectsMovement;
 
         public Asteroid(Vector2 position, int speed) : base(position)
         {
 
             CreateAnimations();
             transform = new Transform(position, new Vector2(100, 100));
-            asteroidMovement = new AsteroidMovement(transform, speed);
+            objectsMovement = new ObjectsMovement(transform, speed);
 
         }
 
@@ -27,7 +27,7 @@ namespace MyGame
         {
             base.Update();
             currentAnimation.Update();
-            asteroidMovement.MoveEnemy();
+            objectsMovement.Move();
         }
         private void CreateAnimations()
         {

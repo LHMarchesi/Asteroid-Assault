@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="AsteroidFactory.cs" />
-    <Compile Include="AsteroidMovement.cs" />
+    <Compile Include="ObjectsMovement.cs" />
     <Compile Include="DificultyManger.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="IPickuppeable.cs" />

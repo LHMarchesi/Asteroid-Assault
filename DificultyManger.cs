@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyGame.assets;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,35 +10,47 @@ namespace MyGame
 {
     public class DifficultManager
     {
-        private float speed;
-        public void chageSpeed(float speed) // Cambia velocidad del enemigo
+        private DateTime timeLastSpawn;
+        private DateTime timeLastShieldSpawn;
+        private DateTime timeLastSpeedUpSpawn;
+        private float timeBetweenSlowAsteroids = 5f;
+
+        private float timeBetweenShied = 15f;
+        private float timeBetweenSpeedUp = 8f;
+        public void Spawner()// Spawnea enemigos en posicion aleatoria 
         {
-            this.speed = speed;
-        }
+            DateTime currentTimeAsteroid = DateTime.Now;
+            DateTime currentTimeShield = DateTime.Now;
+            DateTime currentTimeSpeedUp = DateTime.Now;
 
-        public void ChangeDifficulty(float var)
-        {
 
-            if (Time.timeElapse > 5)
+            if ((currentTimeAsteroid - timeLastSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
             {
-                chageSpeed(var + 5);
-                Debug.WriteLine(var);
-            }
-            if (Time.timeElapse > 20)
-            {
-                chageSpeed(var + 5);
-                Debug.WriteLine(var);
-            }
-            if (Time.timeElapse > 25)
-            {
-                chageSpeed(var + 5);
-                Debug.WriteLine(var);
+                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
+                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
+                timeLastSpawn = currentTimeAsteroid;
 
+                Console.WriteLine("Spawneo Slow");
             }
-            else
+            if ((currentTimeShield - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
-                chageSpeed(var);
+                GameManager.Instance.LevelManager.GameObjects.Add(new Shield(Asteroid.SetRandomPosition()));
+                timeLastShieldSpawn = currentTimeShield;
+
+                Console.WriteLine("Spawneo Shield");
+            }
+            if ((currentTimeSpeedUp - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(Asteroid.SetRandomPosition()));
+                timeLastSpeedUpSpawn = currentTimeSpeedUp;
+
+                Console.WriteLine("Spawneo SpeedUp");
             }
         }
     }
+
+    //GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
+    //GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));            
+    //GameManager.Instance.LevelManager.GameObjects.Add(new Shield(new Vector2(426, 100)));
+    //GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(new Vector2(852, 100)));
 }
