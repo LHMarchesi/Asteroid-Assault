@@ -11,6 +11,7 @@ namespace MyGame.assets
         protected Animation currentAnimation;
         protected Transform transform;
         public Transform Transform => transform;
+
         public GameObject(Vector2 position) {
             transform = new Transform(position, new Vector2(100, 100));
         }
@@ -20,6 +21,7 @@ namespace MyGame.assets
             transform.Position = new Vector2(200, 200);
             Engine.Draw(currentAnimation.CurrentFrame, transform.Position.x, transform.Position.y);
         }
+
         public virtual void Update()
         {
             currentAnimation.Update();

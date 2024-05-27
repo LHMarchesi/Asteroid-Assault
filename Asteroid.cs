@@ -13,13 +13,11 @@ namespace MyGame
         private Animation idleAnimation;
         private ObjectsMovement objectsMovement;
 
-        public Asteroid(Vector2 position, int speed) : base(position)
+        public Asteroid(Vector2 position, int speed) : base(position) // Construcrtor
         {
-
             CreateAnimations();
             transform = new Transform(position, new Vector2(100, 100));
             objectsMovement = new ObjectsMovement(transform, speed);
-
         }
 
 
@@ -29,6 +27,7 @@ namespace MyGame
             currentAnimation.Update();
             objectsMovement.Move();
         }
+
         private void CreateAnimations()
         {
             List<IntPtr> idleTextures = new List<IntPtr>();
@@ -40,9 +39,7 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 0.1f, true);
             currentAnimation = idleAnimation;
         }
-
-
-        public static Vector2 SetRandomPosition()
+        public static Vector2 SetRandomPosition() // Toma dos valores aletoreos, por encima de la pantalla, y devuelve un vector dos aleatoreo
         {
             RandomNumber random = new RandomNumber();
             int randomX = random.Rand(0, 1024);
@@ -50,7 +47,6 @@ namespace MyGame
             Vector2 randomPos = new Vector2(randomX, randomY);
             return randomPos;
         }
-
     }
 
 

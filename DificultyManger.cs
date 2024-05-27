@@ -17,40 +17,30 @@ namespace MyGame
 
         private float timeBetweenShied = 15f;
         private float timeBetweenSpeedUp = 8f;
-        public void Spawner()// Spawnea enemigos en posicion aleatoria 
+        public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer
         {
             DateTime currentTimeAsteroid = DateTime.Now;
             DateTime currentTimeShield = DateTime.Now;
             DateTime currentTimeSpeedUp = DateTime.Now;
-
 
             if ((currentTimeAsteroid - timeLastSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
                 GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));
                 timeLastSpawn = currentTimeAsteroid;
-
-                Console.WriteLine("Spawneo Slow");
             }
+
             if ((currentTimeShield - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new Shield(Asteroid.SetRandomPosition()));
                 timeLastShieldSpawn = currentTimeShield;
-
-                Console.WriteLine("Spawneo Shield");
             }
+
             if ((currentTimeSpeedUp - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(Asteroid.SetRandomPosition()));
                 timeLastSpeedUpSpawn = currentTimeSpeedUp;
-
-                Console.WriteLine("Spawneo SpeedUp");
             }
         }
     }
-
-    //GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.slow));
-    //GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(Asteroid.SetRandomPosition(), AsteroidType.fast));            
-    //GameManager.Instance.LevelManager.GameObjects.Add(new Shield(new Vector2(426, 100)));
-    //GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(new Vector2(852, 100)));
 }

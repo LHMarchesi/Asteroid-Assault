@@ -18,7 +18,7 @@ namespace MyGame
         public int CurrentFrameIndex => currentFrameIndex;
         public IntPtr CurrentFrame => textures[currentFrameIndex];
 
-        public Animation(string name, List<IntPtr> frames, float speed, bool isLoopEnabled)
+        public Animation(string name, List<IntPtr> frames, float speed, bool isLoopEnabled) // Construcrtor
         {
             this.name = name;
             this.textures = frames;

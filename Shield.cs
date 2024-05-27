@@ -11,19 +11,22 @@ namespace MyGame
     {
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
+
         private int shieldSpeed = 5;
+
         public Shield(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(0,0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);
         }
+
         public void PickUp()
         {
             GameManager.Instance.LevelManager.Player.candie = false;
             GameManager.Instance.LevelManager.Player.shieldPicked = true;
-            Engine.Debug("Shield Obtenido");
         }
+
         public override void Update()
         {
             base.Update();

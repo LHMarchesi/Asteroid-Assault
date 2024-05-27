@@ -9,11 +9,12 @@ namespace MyGame
     public struct Time
     {
         private static DateTime _startTime;
+
+        public static float winTime =  60;
+
         private static float _lastTimeFrame;
         public static float DeltaTime;
-        public static float winTime =  30;
         public static float timeElapse;
-
         public void Initialize() => _startTime = DateTime.Now;
 
         public void Update()

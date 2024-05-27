@@ -12,13 +12,12 @@ namespace MyGame
         private float maxX = 1280;
         private float maxY = 720;
 
-
         public PlayerLimits(Player player)
         {
             this.player = player;
         }
 
-        public void CheckLimits()
+        public void CheckLimits() // Limites de pantalla
         {
             Vector2 position = player.Transform.Position;
 
@@ -39,7 +38,6 @@ namespace MyGame
             {
                 position.y = maxY - player.Transform.Scale.y * 1.5f;
             }
-
             player.Transform.SetPosition(position);
         }
     }

@@ -10,14 +10,11 @@ namespace MyGame
     {
         slow, fast
     }
-
     public class AsteroidFactory
     {
-
-
-        public static Asteroid CreateAsteroid(Vector2 position, AsteroidType type)
+        public static Asteroid CreateAsteroid(Vector2 position, AsteroidType type)  // Factory de enemigos con diferente velocidad
         {
-           
+
             switch (type)
             {
                 case AsteroidType.slow:
@@ -28,7 +25,5 @@ namespace MyGame
             }
             return null;
         }
-
-       
     }
 }

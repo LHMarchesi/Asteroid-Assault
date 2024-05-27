@@ -14,17 +14,11 @@ namespace MyGame
         }
 
         private static GameManager instance;
-        static public GameStatus gameStart = GameStatus.menu;
-
-        private IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.png");
-        private IntPtr winScreen = Engine.LoadImage("assets/Win.png");
-        private IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
-
         private LevelManager levelManager;
+        static public GameStatus gameStart = GameStatus.menu;
         public LevelManager LevelManager => levelManager;
 
         public static GameManager Instance
-
         {
             get
             {
@@ -45,9 +39,10 @@ namespace MyGame
         public void Update()
         {
 
-            switch (gameStart)
+            switch (gameStart) // Estados del juego
             {
                 case GameStatus.menu:
+
                     if (Engine.KeyPress(Engine.KEY_ESP))
                     {
                         Initialize();
@@ -58,7 +53,6 @@ namespace MyGame
                 case GameStatus.game:
 
                     levelManager.Update();
-
                     break;
 
                 case GameStatus.win:
@@ -68,6 +62,7 @@ namespace MyGame
                         gameStart = GameStatus.game;
                     }
                     break;
+
                 case GameStatus.lose:
                     if (Engine.KeyPress(Engine.KEY_ESP))
                     {
@@ -75,7 +70,6 @@ namespace MyGame
                         gameStart = GameStatus.game;
                     }
                     break;
-                    //.....
             }
         }
 
@@ -84,31 +78,30 @@ namespace MyGame
             switch (gameStart)
             {
                 case GameStatus.menu:
-                    Engine.Clear();
-                    Engine.Draw(menuScreen, 0, 0);
-                    Engine.Show();
 
+                    Engine.Clear();
+                    Engine.Draw(levelManager.menuScreen, 0, 0);
+                    Engine.Show();
                     break;
 
                 case GameStatus.game:
 
                     levelManager.Render();
-
                     break;
 
                 case GameStatus.win:
-                    Engine.Clear();
 
-                    Engine.Draw(winScreen, 0, 0);
+                    Engine.Clear();
+                    Engine.Draw(levelManager.winScreen, 0, 0);
                     Engine.Show();
                     break;
+
                 case GameStatus.lose:
-                    Engine.Clear();
 
-                    Engine.Draw(loseScreen, 0, 0);
+                    Engine.Clear();
+                    Engine.Draw(levelManager.loseScreen, 0, 0);
                     Engine.Show();
                     break;
-                    //.....
             }
 
         }
@@ -117,10 +110,5 @@ namespace MyGame
         {
             gameStart = newStatus;
         }
-
-
-
-
-
     }
 }

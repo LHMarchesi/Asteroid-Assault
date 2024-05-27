@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading;
@@ -8,10 +6,8 @@ using Tao.Sdl;
 
 namespace MyGame
 {
-
     class Program
     {
-        
         static void Main(string[] args)
         {
             Engine.Initialize();
@@ -20,11 +16,11 @@ namespace MyGame
             while (true)
             {
                 GameManager.Instance.Render();
-                GameManager.Instance.Update();                
+                GameManager.Instance.Update();
 
                 Sdl.SDL_Delay(20);
             }
         }
-        
+
     }
 }

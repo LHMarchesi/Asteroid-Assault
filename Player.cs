@@ -11,14 +11,14 @@ namespace MyGame
     {
         public event Action<Player> Ondie;
 
-        public bool candie =  true;
-        public bool shieldPicked = false;
+        public PlayerController controller;
         private PlayerLimits playerLimits;
         static private Animation idleAnimation;
-       
 
         private Vector2 originalPosition;
-        public PlayerController controller;
+        public bool candie =  true;
+        public bool shieldPicked = false;
+       
         public Player(Vector2 position) : base(position)
         {
             playerLimits = new PlayerLimits(this);
@@ -30,7 +30,6 @@ namespace MyGame
 
         public override void Update()
         {
-            
             base.Update();
             controller.GetInputs();
             CheckCollisions();
@@ -53,14 +52,15 @@ namespace MyGame
                 float sumHalfWidth = gameObject.Transform.Scale.x / 2 + transform.Scale.x / 2;
                 float sumHalfH = gameObject.Transform.Scale.y / 2 + transform.Scale.y / 2;
 
-                if (distanceX < sumHalfWidth && distanceY < sumHalfH) // hay colision
+                if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colision
                 {
                     if (gameObject is Asteroid && candie)
                     {
                         Ondie.Invoke(this);
+
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
-                        SpeedUp.speedUp = false;
+                        SpeedUp.isPicked = false;
                     }
                     else if (gameObject is Asteroid && !candie)
                     {
@@ -86,7 +86,7 @@ namespace MyGame
         // Animations
         public void IdleAnimation()
         {
-            if(SpeedUp.speedUp == false)
+            if(!SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 4; i++)
@@ -97,7 +97,7 @@ namespace MyGame
                  idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (SpeedUp.speedUp == true) 
+            else if (SpeedUp.isPicked) 
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)
@@ -111,7 +111,7 @@ namespace MyGame
         }
         public void LeftAnimation()
         {
-            if (SpeedUp.speedUp == false)
+            if (!SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)
@@ -122,7 +122,7 @@ namespace MyGame
                 idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (SpeedUp.speedUp == true)
+            else if (SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)
@@ -136,7 +136,7 @@ namespace MyGame
         }
         public void RightAnimation()
         {
-            if (SpeedUp.speedUp == false)
+            if (!SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)
@@ -147,7 +147,7 @@ namespace MyGame
                 idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (SpeedUp.speedUp == true)
+            else if (SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)

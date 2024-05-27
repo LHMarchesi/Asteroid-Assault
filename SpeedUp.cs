@@ -9,22 +9,25 @@ namespace MyGame
 {
     public class SpeedUp : GameObject, IPickuppeable
     {
-        private int MovementSpeed = 5;
-
         private Animation idleAnimation;
-        private int newSpeed = 3;
-        static public bool speedUp = false;
         private ObjectsMovement objectsMovement;
-        public SpeedUp(Vector2 pos) : base(pos)
+
+        static public bool isPicked = false;
+
+        private int MovementSpeed = 5;
+        private int newSpeed = 3;
+
+        public SpeedUp(Vector2 pos) : base(pos)  // Constructor
         {
             CreateAnimations();
             transform = new Transform(pos, new Vector2(0,0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
         }
+
         public void PickUp()
         {
             GameManager.Instance.LevelManager.Player.controller.ChangeSpeed(newSpeed);
-            speedUp = true;
+            isPicked = true;
         }
 
         public override void Update()

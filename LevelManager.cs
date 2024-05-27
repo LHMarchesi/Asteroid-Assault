@@ -11,16 +11,24 @@ namespace MyGame
 {
     public class LevelManager
     {
-        Font font = new Font("assets/Fonts/Fuente.ttf", 24);
-        private IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
-        private IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
+        private DifficultManager difficultManager = new DifficultManager();
         public List<GameObject> GameObjects = new List<GameObject>();
 
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
-        private DifficultManager difficultManager = new DifficultManager();
+
+        Font font = new Font("assets/Fonts/Fuente.ttf", 24);
 
         private Time _time;
+
+        // Escenas de juego
+        public IntPtr winScreen = Engine.LoadImage("assets/Win.png");
+        public IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
+        public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
+        public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.png");
+
+        public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
+
         
         public void Initialize()
         {
@@ -47,14 +55,12 @@ namespace MyGame
             Engine.Clear();
 
             Engine.Draw(gameScreen, 0, 0);
-
             player.Render();
 
-            if (GameManager.Instance.LevelManager.Player.shieldPicked == true)
+            if (Player.shieldPicked) // Si tiene el escudo
             {
                 Engine.Draw(shieldIsPicked, player.Transform.Position.x - 25, player.Transform.Position.y - 25);
             }
-
 
             for (int i = 0; i < GameObjects.Count; i++)
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +13,14 @@ namespace MyGame
         private Transform transform;
         private int speed;
         private Vector2 direccion = new Vector2(0,1);
+
         public ObjectsMovement(Transform transform, int speed)
         {
             this.transform = transform;
             this.speed = speed;
         }
-        public void Move()
+
+        public void Move()  // Movimiento hacia abajo
         {
             if (transform.Position.y >= 1000)
             {
@@ -25,7 +29,7 @@ namespace MyGame
             transform.Translate(direccion, speed);
         }
 
-        public static Vector2 SetRandomPosition()
+        public static Vector2 SetRandomPosition() // ?
         {
             RandomNumber random = new RandomNumber();
             int randomX = random.Rand(0, 1024);

@@ -11,20 +11,19 @@ namespace MyGame
     {
         private Transform transform;
         private int speed = 10;
+        private int speedBackwards = 8;
         public PlayerController(Transform transform)
         {
             this.transform = transform;
         }
 
-        public void GetInputs()  //Character Movement
+        public void GetInputs()  //Movimiento de jugador
         {
-
             if (Engine.KeyPress(Engine.KEY_A))
             {
                 transform.Translate(new Vector2(-1, 0), speed);
                 GameManager.Instance.LevelManager.Player.LeftAnimation();
             }
-
 
             if (Engine.KeyPress(Engine.KEY_D))
             {
@@ -40,8 +39,8 @@ namespace MyGame
 
             if (Engine.KeyPress(Engine.KEY_S))
             {
-                transform.Translate(new Vector2(0, 1), speed / 2);
-                GameManager.Instance.LevelManager.Player.IdleAnimation();
+                transform.Translate(new Vector2(0, 1), speedBackwards);
+                GameManager.Instance.LevelManager.Player.IdleAnimation(); 
             }
         }
 
