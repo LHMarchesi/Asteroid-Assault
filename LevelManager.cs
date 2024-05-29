@@ -17,8 +17,7 @@ namespace MyGame
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
 
-        private float backgroundY = -1000;
-
+        private float backgroundY = -2280;
         
 
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
@@ -54,14 +53,14 @@ namespace MyGame
             difficultManager.Spawner();
             _time.Update();
 
-            backgroundY += 3f;
+            backgroundY += 1f;
         }
 
         public void Render()
         {
             Engine.Clear();
 
-            Engine.Draw(gameScreen, 0, backgroundY);
+            Engine.Draw(gameScreen, 0, backgroundY, 1280, 3000);
             player.Render();
 
             if (Shield.IsPicked) // Si tiene el escudo
