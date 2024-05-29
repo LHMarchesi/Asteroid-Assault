@@ -27,7 +27,7 @@ namespace MyGame
         public IntPtr winScreen = Engine.LoadImage("assets/Win.png");
         public IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
         public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
-        public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.png");
+        public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.jpg");
         public IntPtr pauseScreen = Engine.LoadImage("assets/Pause.jpg");
 
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");

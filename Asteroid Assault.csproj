@@ -89,7 +89,7 @@
     <Content Include="assets\Lose.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\MainMenu.png">
+    <Content Include="assets\mainMenu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Meteoro\0.png">
