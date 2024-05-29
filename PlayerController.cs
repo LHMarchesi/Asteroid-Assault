@@ -48,6 +48,7 @@ namespace MyGame
         {
             this.speed += speed;
             speedBackwards += speed;
+            LevelManager.backgroundSpeed += 0.1f;
         }
     }
 }

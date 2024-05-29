@@ -51,5 +51,6 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 0.9f, true);
             currentAnimation = idleAnimation;
         }
+
     }
 }
