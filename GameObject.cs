@@ -8,6 +8,7 @@ namespace MyGame.assets
 {
     public class GameObject
     {
+       
         protected Animation currentAnimation;
         protected Transform transform;
         public Transform Transform => transform;
@@ -24,6 +25,10 @@ namespace MyGame.assets
 
         public virtual void Update()
         {
+            if (GameManager.Instance.GetCurrentGameStatus() == GameManager.GameStatus.pause)
+            {
+                return;
+            }
             currentAnimation.Update();
         }
     }

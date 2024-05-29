@@ -10,7 +10,7 @@ namespace MyGame
     {
         public enum GameStatus
         {
-            menu, game, win, lose, credits
+            menu, game, win, lose, credits, pause
         }
 
         private static GameManager instance;
@@ -53,6 +53,10 @@ namespace MyGame
                 case GameStatus.game:
 
                     levelManager.Update();
+                    if (Engine.KeyPress(Engine.KEY_ESC))  // Pausa
+                    {
+                        gameStart = GameStatus.pause;
+                    } 
                     break;
 
                 case GameStatus.win:
@@ -70,6 +74,22 @@ namespace MyGame
                         gameStart = GameStatus.game;
                     }
                     break;
+
+                case GameStatus.pause:
+                    if (Engine.KeyPress(Engine.KEY_P))
+                    {
+                        gameStart = GameStatus.game;
+                    }
+                    if (Engine.KeyPress(Engine.KEY_R))
+                    {
+                        Initialize();
+                        gameStart = GameStatus.game;
+                    }
+                    if (Engine.KeyPress(Engine.KEY_X))
+                    {
+                        Engine.ErrorFatal("Quit");
+                    }
+                    break;
             }
         }
 
@@ -82,6 +102,11 @@ namespace MyGame
                     Engine.Clear();
                     Engine.Draw(levelManager.menuScreen, 0, 0);
                     Engine.Show();
+                    break;
+
+                case GameStatus.pause:
+
+                    levelManager.RenderPauseMenu();
                     break;
 
                 case GameStatus.game:
@@ -110,5 +135,11 @@ namespace MyGame
         {
             gameStart = newStatus;
         }
+
+        public GameStatus GetCurrentGameStatus()
+        {
+            return gameStart;
+        }
+
     }
 }

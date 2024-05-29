@@ -69,11 +69,23 @@ namespace MyGame
                 GameObjects[i].Render();
             }
 
+
+
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
 
             Engine.Show();
         }
 
-       
+        public void RenderPauseMenu()
+        {
+            Engine.Clear();
+            // Dibujar el menú de pausa. Puedes personalizar esto según tus necesidades.
+            Engine.DrawText("PAUSE", 100, 100, 255, 255, 255, font);
+            Engine.DrawText("Press 'P' to Resume", 100, 130, 255, 255, 255, font);
+            Engine.DrawText("Press 'R' to Restart", 100, 160, 255, 255, 255, font);
+            Engine.DrawText("Press 'X' to Quit", 100, 190, 255, 255, 255, font);
+            Engine.Show();
+        }
+
     }
 }
