@@ -59,7 +59,7 @@ namespace MyGame
             Engine.Draw(gameScreen, 0, 0);
             player.Render();
 
-            if (Shield.shieldPicked) // Si tiene el escudo
+            if (Shield.IsPicked) // Si tiene el escudo
             {
                 Engine.Draw(shieldIsPicked, player.Transform.Position.x - 25, player.Transform.Position.y - 25);
             }

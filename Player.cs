@@ -13,11 +13,12 @@ namespace MyGame
 
         public PlayerController controller;
         private PlayerLimits playerLimits;
+        private Shield shield;
         static private Animation idleAnimation;
 
         private Vector2 originalPosition;
-        public bool candie =  true;
-       
+        public bool candie = true;
+
         public Player(Vector2 position) : base(position)
         {
             playerLimits = new PlayerLimits(this);
@@ -36,7 +37,7 @@ namespace MyGame
 
             if (Time.timeElapse > Time.winTime)
             {
-                Shield.shieldPicked = false;
+                Shield.IsPicked = false;
                 SpeedUp.isPicked = false;
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
             }
@@ -55,26 +56,39 @@ namespace MyGame
 
                 if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colision
                 {
-                    if (gameObject is Asteroid && !Shield.shieldPicked)
+                    if (gameObject is Asteroid)
                     {
-                        Asteroid asteroid = (Asteroid)gameObject; // Convertir el GameObject a Asteroid
-                        asteroid.OnDestroy();
-                        Ondie.Invoke(this);
+                        if (!Shield.IsPicked) // Lose Condition
+                        {
+                            Asteroid asteroid = (Asteroid)gameObject;
+                            asteroid.OnDestroy();
+                            Ondie.Invoke(this);
 
-                        GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
-                        SpeedUp.isPicked = false;
-                    }
-                    else if (gameObject is Asteroid && Shield.shieldPicked)
-                    {
-                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
-                        candie = true;
-                        Shield.shieldPicked = false;
+                            GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
+                            SpeedUp.isPicked = false;
+                        }
+                        else
+                        {
+                            GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                            candie = true;
+                            Shield.IsPicked = false;
+                           
+
+                            if (shield != null)
+                            {
+                                shield.restarAcumulable();
+                            }
+                        }
                     }
 
                     if (gameObject is IPickuppeable pickupobj)
-                    {                        
+                    {
                         pickupobj.PickUp();
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                        if (pickupobj is Shield shieldPicked)
+                        {
+                            shield = shieldPicked;
+                        }
                     }
                 }
             }
@@ -87,18 +101,18 @@ namespace MyGame
         // Animations
         public void IdleAnimation()
         {
-            if(!SpeedUp.isPicked)
+            if (!SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 4; i++)
                 {
-                  IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
-                   idleTextures.Add(frame);
+                    IntPtr frame = Engine.LoadImage($"assets/Ship/Idle/{i}.png");
+                    idleTextures.Add(frame);
                 }
-                 idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (SpeedUp.isPicked) 
+            else if (SpeedUp.isPicked)
             {
                 List<IntPtr> idleTextures = new List<IntPtr>();
                 for (int i = 0; i < 3; i++)
