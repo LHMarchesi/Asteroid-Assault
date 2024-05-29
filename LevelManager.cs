@@ -73,15 +73,16 @@ namespace MyGame
 
 
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
-
+            Engine.DrawText("Escudos totales : " + Shield.totalShieldtxt , 10, 10, 255, 255, 255, font);
             Engine.Show();
         }
 
         public void RenderPauseMenu()
         {
             Engine.Clear();
-            // Dibujar el menú de pausa. Puedes personalizar esto según tus necesidades.
+
             Engine.Draw(pauseScreen, 0, 0);
+
             Engine.Show();
         }
 
