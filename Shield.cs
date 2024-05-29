@@ -16,8 +16,9 @@ namespace MyGame
         public static bool IsPicked = false;
         private int shieldSpeed = 5;
 
-        private int maxAcumulaciones = 2;
-        private static int acumulaciones;
+        private int maxShield = 2;
+        private static int totalShield;
+        public static string totalShieldtxt = "0";
 
 
 
@@ -32,23 +33,30 @@ namespace MyGame
         {
             IsPicked = true;
             Acumulable();
+            
         }
 
         public void Acumulable()
         {
             if (IsPicked)
             {
-                if (acumulaciones < maxAcumulaciones)
+                if (totalShield < maxShield)
                 {
-                    acumulaciones++;
+                    totalShield++;
+                    totalShieldtxt = totalShield.ToString();
+                }
+                if (totalShield == maxShield)
+                {
+                    totalShieldtxt = maxShield+" (Max)";
                 }
             }
         }
 
         public void restarAcumulable()
         {
-            acumulaciones--;
-            if (acumulaciones == 0)
+            totalShield--;
+            totalShieldtxt = totalShield.ToString();
+            if (totalShield == 0)
             {
                 IsPicked = false;
             }
