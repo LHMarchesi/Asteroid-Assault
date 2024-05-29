@@ -84,6 +84,8 @@ namespace MyGame
                     {
                         Initialize();
                         gameStart = GameStatus.game;
+                        Shield.IsPicked = false;
+                        SpeedUp.isPicked = false;
                     }
                     if (Engine.KeyPress(Engine.KEY_X))
                     {

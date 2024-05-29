@@ -265,3 +265,4 @@ A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SpeedUp\0.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SpeedUp\1.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SpeedUp\2.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SpeedUp\3.png
+C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\Pause.jpg

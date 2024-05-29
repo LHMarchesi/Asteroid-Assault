@@ -104,6 +104,9 @@
     <Content Include="assets\Meteoro\3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\Pause.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\ShieldShip\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

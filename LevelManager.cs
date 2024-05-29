@@ -28,6 +28,7 @@ namespace MyGame
         public IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
         public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
         public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.png");
+        public IntPtr pauseScreen = Engine.LoadImage("assets/Pause.jpg");
 
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
 
@@ -80,10 +81,7 @@ namespace MyGame
         {
             Engine.Clear();
             // Dibujar el menú de pausa. Puedes personalizar esto según tus necesidades.
-            Engine.DrawText("PAUSE", 100, 100, 255, 255, 255, font);
-            Engine.DrawText("Press 'P' to Resume", 100, 130, 255, 255, 255, font);
-            Engine.DrawText("Press 'R' to Restart", 100, 160, 255, 255, 255, font);
-            Engine.DrawText("Press 'X' to Quit", 100, 190, 255, 255, 255, font);
+            Engine.Draw(pauseScreen, 0, 0);
             Engine.Show();
         }
 
