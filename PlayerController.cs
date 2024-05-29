@@ -47,6 +47,7 @@ namespace MyGame
         public void ChangeSpeed(int speed)
         {
             this.speed += speed;
+            speedBackwards += speed;
         }
     }
 }

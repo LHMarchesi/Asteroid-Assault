@@ -17,6 +17,8 @@ namespace MyGame
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
 
+        
+
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
 
         private Time _time;
@@ -57,7 +59,7 @@ namespace MyGame
             Engine.Draw(gameScreen, 0, 0);
             player.Render();
 
-            if (Player.shieldPicked) // Si tiene el escudo
+            if (Shield.shieldPicked) // Si tiene el escudo
             {
                 Engine.Draw(shieldIsPicked, player.Transform.Position.x - 25, player.Transform.Position.y - 25);
             }

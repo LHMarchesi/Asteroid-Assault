@@ -17,7 +17,6 @@ namespace MyGame
 
         private Vector2 originalPosition;
         public bool candie =  true;
-        public bool shieldPicked = false;
        
         public Player(Vector2 position) : base(position)
         {
@@ -37,6 +36,8 @@ namespace MyGame
 
             if (Time.timeElapse > Time.winTime)
             {
+                Shield.shieldPicked = false;
+                SpeedUp.isPicked = false;
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
             }
         }
@@ -54,21 +55,21 @@ namespace MyGame
 
                 if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colision
                 {
-                    if (gameObject is Asteroid && candie)
+                    if (gameObject is Asteroid && !Shield.shieldPicked)
                     {
+                        Asteroid asteroid = (Asteroid)gameObject; // Convertir el GameObject a Asteroid
+                        asteroid.OnDestroy();
                         Ondie.Invoke(this);
 
-                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
                         SpeedUp.isPicked = false;
                     }
-                    else if (gameObject is Asteroid && !candie)
+                    else if (gameObject is Asteroid && Shield.shieldPicked)
                     {
                         GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                         candie = true;
-                        shieldPicked = false;
-
-                    }                
+                        Shield.shieldPicked = false;
+                    }
 
                     if (gameObject is IPickuppeable pickupobj)
                     {                        

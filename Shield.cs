@@ -11,6 +11,7 @@ namespace MyGame
     {
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
+        public static bool shieldPicked = false;
 
         private int shieldSpeed = 5;
 
@@ -23,8 +24,7 @@ namespace MyGame
 
         public void PickUp()
         {
-            GameManager.Instance.LevelManager.Player.candie = false;
-            GameManager.Instance.LevelManager.Player.shieldPicked = true;
+            shieldPicked = true;
         }
 
         public override void Update()

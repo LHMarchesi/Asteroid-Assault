@@ -28,18 +28,23 @@ namespace MyGame
                 GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
                 GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
                 timeLastSpawn = currentTimeAsteroid;
+                Console.WriteLine("A");
             }
 
             if ((currentTimeShield - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new Shield(ObjectsMovement.SetRandomPosition()));
                 timeLastShieldSpawn = currentTimeShield;
+                Console.WriteLine("A");
+
             }
 
             if ((currentTimeSpeedUp - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new SpeedUp(ObjectsMovement.SetRandomPosition()));
                 timeLastSpeedUpSpawn = currentTimeSpeedUp;
+                Console.WriteLine("A");
+
             }
         }
     }
