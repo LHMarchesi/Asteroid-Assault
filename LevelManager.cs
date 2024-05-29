@@ -17,6 +17,8 @@ namespace MyGame
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
 
+        private float backgroundY = -1000;
+
         
 
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
@@ -26,10 +28,11 @@ namespace MyGame
         // Escenas de juego
         public IntPtr winScreen = Engine.LoadImage("assets/Win.png");
         public IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
-        public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.png");
+        public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.jpg");
         public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.jpg");
         public IntPtr pauseScreen = Engine.LoadImage("assets/Pause.jpg");
 
+        //Escudo
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
 
         
@@ -51,13 +54,14 @@ namespace MyGame
             difficultManager.Spawner();
             _time.Update();
 
+            backgroundY += 3f;
         }
 
         public void Render()
         {
             Engine.Clear();
 
-            Engine.Draw(gameScreen, 0, 0);
+            Engine.Draw(gameScreen, 0, backgroundY);
             player.Render();
 
             if (Shield.IsPicked) // Si tiene el escudo

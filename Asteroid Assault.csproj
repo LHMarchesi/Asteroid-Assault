@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="assets\BackGround.png">
+    <Content Include="assets\BackGround.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Game.png">
