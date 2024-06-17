@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="AsteroidFactory.cs" />
+    <Compile Include="CollisionHandler.cs" />
     <Compile Include="IAcumulabble.cs" />
     <Compile Include="ObjectsMovement.cs" />
     <Compile Include="DificultyManger.cs" />

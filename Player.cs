@@ -13,17 +13,20 @@ namespace MyGame
 
         public PlayerController controller;
         private PlayerLimits playerLimits;
-        private Shield shield;
+        private CollisionHandler collisionHandler;
+        private Vector2 originalPosition;
+
+        public Shield shield;
         static private Animation idleAnimation;
 
-        private Vector2 originalPosition;
-        public bool candie = true;
+        public bool candie = true;  
 
         public Player(Vector2 position) : base(position)
         {
             playerLimits = new PlayerLimits(this);
-            originalPosition = position;
             controller = new PlayerController(transform);
+            collisionHandler = new CollisionHandler(this);
+            originalPosition = position;
             Ondie += ResetPosition;
             IdleAnimation();
         }
@@ -32,7 +35,8 @@ namespace MyGame
         {
             base.Update();
             controller.GetInputs();
-            CheckCollisions();
+
+            collisionHandler.CheckCollisions();
             playerLimits.CheckLimits();
 
             if (Time.timeElapse > Time.winTime)
@@ -42,61 +46,12 @@ namespace MyGame
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
             }
         }
-        private void CheckCollisions()
-        {
-
-            for (int i = 0; i < GameManager.Instance.LevelManager.GameObjects.Count; i++)
-            {
-                GameObject gameObject = GameManager.Instance.LevelManager.GameObjects[i];
-                float distanceX = Math.Abs((gameObject.Transform.Position.x + (gameObject.Transform.Scale.x / 2)) - (transform.Position.x + (transform.Scale.x / 2)));
-                float distanceY = Math.Abs((gameObject.Transform.Position.y + (gameObject.Transform.Scale.y / 2)) - (transform.Position.y + (transform.Scale.y / 2)));
-
-                float sumHalfWidth = gameObject.Transform.Scale.x / 2 + transform.Scale.x / 2;
-                float sumHalfH = gameObject.Transform.Scale.y / 2 + transform.Scale.y / 2;
-
-                if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colision
-                {
-                    if (gameObject is Asteroid)
-                    {
-                        if (!Shield.IsPicked) // Lose Condition
-                        {
-                            Asteroid asteroid = (Asteroid)gameObject;
-                            asteroid.OnDestroy();
-                            Ondie.Invoke(this);
-
-                            GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
-                            SpeedUp.isPicked = false;
-                        }
-                        else
-                        {
-                            GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
-                            candie = true;
-                            Shield.IsPicked = false;
-                           
-
-                            if (shield != null)
-                            {
-                                shield.restarAcumulable();
-                            }
-                        }
-                    }
-
-                    if (gameObject is IPickuppeable pickupobj)
-                    {
-                        pickupobj.PickUp();
-                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
-                        if (pickupobj is Shield shieldPicked)
-                        {
-                            shield = shieldPicked;
-                        }
-                    }
-                }
-            }
-        }
+      
         public void ResetPosition(Player player)
         {
             transform.SetPosition(originalPosition);
         }
+
 
         // Animations
         public void IdleAnimation()
@@ -174,7 +129,5 @@ namespace MyGame
                 currentAnimation = idleAnimation;
             }
         }
-
-
     }
 }

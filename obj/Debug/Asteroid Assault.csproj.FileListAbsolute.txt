@@ -173,10 +173,8 @@ C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\Asteroid Assault.csproj.CoreCo
 C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\Asteroid Assault.csproj.CopyComplete
 C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\MyGame.exe
 C:\Users\alu765\Downloads\Proyecto(8_5)\obj\Debug\MyGame.pdb
-A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\BackGround.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Game.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Lose.png
-A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\MainMenu.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Meteoro\0.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Meteoro\1.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Meteoro\2.png
@@ -266,3 +264,6 @@ A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SpeedUp\3.png
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\Pause.jpg
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\mainMenu.jpg
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\BackGround.jpg
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\BackGround.jpg
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\mainMenu.jpg
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Pause.jpg
