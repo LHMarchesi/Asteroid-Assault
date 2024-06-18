@@ -13,15 +13,18 @@ namespace MyGame
         private DateTime timeLastSpawn;
         private DateTime timeLastShieldSpawn;
         private DateTime timeLastSpeedUpSpawn;
+        private DateTime timeLastShootPUSpawn;
 
         private float timeBetweenSlowAsteroids = 7f;
         private float timeBetweenShied = 15f;
         private float timeBetweenSpeedUp = 8f;
+        private float timeBetweenShootPU = 2f;
         public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer
         {
             DateTime currentTimeAsteroid = DateTime.Now;
             DateTime currentTimeShield = DateTime.Now;
             DateTime currentTimeSpeedUp = DateTime.Now;
+            DateTime currentTimeShootPU = DateTime.Now;
 
             if ((currentTimeAsteroid - timeLastSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
             {
@@ -34,6 +37,12 @@ namespace MyGame
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new Shield(ObjectsMovement.SetRandomPosition()));
                 timeLastShieldSpawn = currentTimeShield;
+            }  
+
+            if ((currentTimeShootPU - timeLastShootPUSpawn).TotalSeconds >= timeBetweenShootPU)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Add(new ShootPowerUp(ObjectsMovement.SetRandomPosition()));
+                timeLastShootPUSpawn = currentTimeShootPU;
             }
 
             if ((currentTimeSpeedUp - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)

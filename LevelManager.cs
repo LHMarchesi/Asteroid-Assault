@@ -79,6 +79,7 @@ namespace MyGame
 
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
             Engine.DrawText("Escudos totales : " + Shield.totalShieldtxt , 10, 10, 255, 255, 255, font);
+            Engine.DrawText("Balas totales : " + ShootPowerUp.totalShootstxt , 1000, 10, 255, 255, 255, font);
             Engine.Show();
         }
 

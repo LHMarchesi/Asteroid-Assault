@@ -18,9 +18,11 @@ namespace MyGame
             switch (type)
             {
                 case AsteroidType.slow:
+                    Asteroid.IsFast = false;
                     return new Asteroid(position, 10);
 
                 case AsteroidType.fast:
+                    Asteroid.IsFast = true;
                     return new Asteroid(position, 15);
             }
             return null;

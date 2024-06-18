@@ -32,7 +32,7 @@ namespace MyGame
         public static Vector2 SetRandomPosition() // Toma dos valores aletoreos, por encima de la pantalla, y devuelve un Vector2 aleatoreo
         {
             RandomNumber random = new RandomNumber();
-            int randomX = random.Rand(-100, 1150);
+            int randomX = random.Rand(-100, 1200);
             int randomY = random.Rand(-1000, -200);
             Vector2 randomPos = new Vector2(randomX, randomY);
             return randomPos;

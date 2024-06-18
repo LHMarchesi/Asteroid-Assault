@@ -49,7 +49,10 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="AsteroidFactory.cs" />
+    <Compile Include="Bullet.cs" />
     <Compile Include="CollisionHandler.cs" />
+    <Compile Include="IPoolable.cs" />
+    <Compile Include="GenericPool.cs" />
     <Compile Include="IAcumulabble.cs" />
     <Compile Include="ObjectsMovement.cs" />
     <Compile Include="DificultyManger.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="Shield.cs" />
+    <Compile Include="ShootPowerUp.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="SpeedUp.cs" />
     <Compile Include="Time.cs" />
@@ -84,6 +88,21 @@
     <Content Include="assets\BackGround.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\Bullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\FastAsteroid\0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\FastAsteroid\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\FastAsteroid\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\FastAsteroid\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\Game.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -93,16 +112,16 @@
     <Content Include="assets\mainMenu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Meteoro\0.png">
+    <Content Include="assets\Asteroid\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Meteoro\1.png">
+    <Content Include="assets\Asteroid\1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Meteoro\2.png">
+    <Content Include="assets\Asteroid\2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="assets\Meteoro\3.png">
+    <Content Include="assets\Asteroid\3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Pause.jpg">

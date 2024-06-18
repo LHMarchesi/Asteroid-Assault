@@ -12,9 +12,15 @@ namespace MyGame
         private Transform transform;
         private int speed = 10;
         private int speedBackwards = 8;
+        DateTime timeLastShoot;
+        private float timeBetweenShoots = 0.1f;
+        GenericPool<Bullet> bulletPool;
+
+
         public PlayerController(Transform transform)
         {
             this.transform = transform;
+            bulletPool = new GenericPool<Bullet>(10, () => new Bullet(new Vector2(0, 0)));
         }
 
         public void GetInputs()  //Movimiento de jugador
@@ -40,7 +46,12 @@ namespace MyGame
             if (Engine.KeyPress(Engine.KEY_S))
             {
                 transform.Translate(new Vector2(0, 1), speedBackwards);
-                GameManager.Instance.LevelManager.Player.IdleAnimation(); 
+                GameManager.Instance.LevelManager.Player.IdleAnimation();
+            }
+
+            if (Engine.KeyPress(Engine.KEY_ESP))
+            {
+                Shoot();
             }
         }
 
@@ -49,6 +60,23 @@ namespace MyGame
             this.speed += speed;
             speedBackwards += speed;
             LevelManager.backgroundSpeed += 0.1f;
+        }
+
+
+        public void Shoot()
+        {
+            DateTime currentTime = DateTime.Now;
+            if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
+            {
+                Bullet bullet = bulletPool.GetObject();
+                if (bullet != null)
+                {
+                    bullet.Transform.SetPosition(new Vector2(transform.Position.x, transform.Position.y));
+                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
+                    timeLastShoot = currentTime;
+                }
+            }
+
         }
     }
 }
