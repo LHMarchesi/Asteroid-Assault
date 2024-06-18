@@ -70,7 +70,7 @@ namespace MyGame
         public override void Update()
         {
             base.Update();
-            objectsMovement.Move();
+            objectsMovement.MoveDown();
             if (transform.Position.y >= 1000)
             {
                 GameManager.Instance.LevelManager.GameObjects.Remove(this);

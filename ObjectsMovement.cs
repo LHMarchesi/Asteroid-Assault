@@ -12,7 +12,6 @@ namespace MyGame
     {
         private Transform transform;
         private int speed;
-        private Vector2 direccion = new Vector2(0,1);
 
         public ObjectsMovement(Transform transform, int speed)
         {
@@ -20,10 +19,14 @@ namespace MyGame
             this.speed = speed;
         }
 
-        public void Move()  // Movimiento hacia abajo
+        public void MoveDown()  // Movimiento hacia abajo
         {
-            transform.Translate(direccion, speed);
-           
+            transform.Translate(new Vector2(0,1), speed);
+        }
+
+        public void MoveUp()  // Movimiento hacia Arriba
+        {
+            transform.Translate(new Vector2(0,-1), speed);
         }
 
         public static Vector2 SetRandomPosition() // Toma dos valores aletoreos, por encima de la pantalla, y devuelve un Vector2 aleatoreo

@@ -29,7 +29,7 @@ namespace MyGame
         {
             base.Update();
             currentAnimation.Update();
-            objectsMovement.Move();
+            objectsMovement.MoveDown();
 
             if (transform.Position.y >= 1000)
             {
