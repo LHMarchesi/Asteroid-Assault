@@ -76,9 +76,9 @@ namespace MyGame
         private void CreateAnimations()
         {
             List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
-                IntPtr frame = Engine.LoadImage($"assets/Shield/{i}.png");
+                IntPtr frame = Engine.LoadImage($"assets/BulletPU/{i}.png");
                 idleTextures.Add(frame);
             }
             idleAnimation = new Animation("Idle", idleTextures, 0.9f, true);
