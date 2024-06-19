@@ -48,7 +48,7 @@ namespace MyGame
                 IntPtr frame = Engine.LoadImage($"assets/SpeedUp/{i}.png");
                 idleTextures.Add(frame);
             }
-            idleAnimation = new Animation("Idle", idleTextures, 0.9f, true);
+            idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
         }
 

@@ -48,7 +48,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Asteroid/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.1f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else
@@ -59,7 +59,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/FastAsteroid/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.1f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 10f, true);
                 currentAnimation = idleAnimation;
             }
         }

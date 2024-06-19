@@ -81,7 +81,7 @@ namespace MyGame
                 IntPtr frame = Engine.LoadImage($"assets/BulletPU/{i}.png");
                 idleTextures.Add(frame);
             }
-            idleAnimation = new Animation("Idle", idleTextures, 0.9f, true);
+            idleAnimation = new Animation("Idle", idleTextures, 40f, true);
             currentAnimation = idleAnimation;
         }
 

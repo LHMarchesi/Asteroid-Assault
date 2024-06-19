@@ -51,6 +51,7 @@
     <Compile Include="AsteroidFactory.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="CollisionHandler.cs" />
+    <Compile Include="ICollider.cs" />
     <Compile Include="IPoolable.cs" />
     <Compile Include="GenericPool.cs" />
     <Compile Include="IAcumulabble.cs" />

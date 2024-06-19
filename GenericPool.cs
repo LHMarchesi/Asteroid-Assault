@@ -16,14 +16,9 @@ namespace MyGame
             for (int i = 0; i < size; i++)
             {
                 T newObj = objectFactory.Invoke();
-                newObj.OnDestroy += RecycleObject;
+                //newObj.OnDestroy += RecycleObject;
                 objectsAvailable.Add(newObj);
             }
-        }
-
-        private void RecycleObject(IPoolable poolable)
-        {
-            throw new NotImplementedException();
         }
 
         public T GetObject()
@@ -39,14 +34,14 @@ namespace MyGame
             return newObj;
         }
 
-        //private void RecycleObject(T obj)
-        //{
-        //    if (objectsInUse.Contains(obj))
-        //    {
-        //        objectsInUse.Remove(obj);
-        //        objectsAvailable.Add(obj);
-        //    }
-        //}
+        private void RecycleObject(T obj)
+        {
+            if (objectsInUse.Contains(obj))
+            {
+                objectsInUse.Remove(obj);
+                objectsAvailable.Add(obj);
+            }
+        }
 
         public void PrintObjects()
         {
