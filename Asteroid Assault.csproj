@@ -49,12 +49,15 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="AsteroidFactory.cs" />
+    <Compile Include="BigAsteroid.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="CollisionHandler.cs" />
+    <Compile Include="FastAsteroid.cs" />
     <Compile Include="ICollider.cs" />
     <Compile Include="IPoolable.cs" />
     <Compile Include="GenericPool.cs" />
     <Compile Include="IAcumulabble.cs" />
+    <Compile Include="NormalAsteroid.cs" />
     <Compile Include="ObjectsMovement.cs" />
     <Compile Include="DificultyManger.cs" />
     <Compile Include="GameObject.cs" />
