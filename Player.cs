@@ -9,7 +9,7 @@ namespace MyGame
 {
     public class Player : GameObject
     {
-        public event Action<Player> Ondie;
+        //public event Action<Player> Ondie;
 
         public PlayerController controller;
         private PlayerLimits playerLimits;
@@ -27,7 +27,7 @@ namespace MyGame
             controller = new PlayerController(transform);
             collisionHandler = new CollisionHandler(this);
             originalPosition = position;
-            Ondie += ResetPosition;
+            //Ondie += ResetPosition;
             IdleAnimation();
         }
 

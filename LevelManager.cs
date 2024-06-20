@@ -20,9 +20,10 @@ namespace MyGame
 
         private float backgroundY = -3376;
         static public float backgroundSpeed = 1f;
-        
 
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
+
+     
 
         private Time _time;
 
@@ -39,7 +40,6 @@ namespace MyGame
         
         public void Initialize()
         {
-
             _time.Initialize();
 
         }

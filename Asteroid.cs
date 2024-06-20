@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Asteroid : GameObject
+    public class Asteroid : GameObject, IPoolable
     {
-        public event Action<Asteroid> Destroy;
+        public event Action<IPoolable> OnDestroy;
         private Animation idleAnimation;
         public static bool IsFast;
         private ObjectsMovement objectsMovement;
@@ -22,7 +22,7 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(position, new Vector2(75, 75));
             objectsMovement = new ObjectsMovement(transform, speed);
-            Destroy += RemoveAsteroid;
+            OnDestroy += RemoveAsteroid;
         }
 
 
@@ -52,15 +52,14 @@ namespace MyGame
 
         }
 
-        public void OnDestroy()
+        public void Destroy()
         {
-            Destroy.Invoke(this);
+            OnDestroy?.Invoke(this);
         }
 
-        private void RemoveAsteroid(Asteroid asteroid)
+        private void RemoveAsteroid(IPoolable asteroid)
         {
-
-            GameManager.Instance.LevelManager.GameObjects.Remove(asteroid);
+            GameManager.Instance.LevelManager.GameObjects.Remove(this);
         }
 
 

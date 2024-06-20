@@ -10,7 +10,7 @@ namespace MyGame
     public class Bullet : GameObject, IPoolable
     {
         ObjectsMovement objectsMovement;
-        int bulletSpeed;
+        //int bulletSpeed;
         private Animation idleAnimation;
         public event Action<IPoolable> OnDestroy;
 
@@ -20,7 +20,7 @@ namespace MyGame
         public Bullet(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(5, 5));
-            objectsMovement = new ObjectsMovement(transform, bulletSpeed);
+            //objectsMovement = new ObjectsMovement(transform, bulletSpeed);
             CreateAnimations();
         }
 

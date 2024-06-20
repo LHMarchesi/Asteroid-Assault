@@ -9,5 +9,6 @@ namespace MyGame
     public interface IPoolable
     {
         event Action<IPoolable> OnDestroy;
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class GenericPool<T> where T : IPoolable
+    public class GenericPool<T> where T : class, IPoolable
     {
         private List<T> objectsInUse = new List<T>();
         private List<T> objectsAvailable = new List<T>();
@@ -16,7 +16,7 @@ namespace MyGame
             for (int i = 0; i < size; i++)
             {
                 T newObj = objectFactory.Invoke();
-                //newObj.OnDestroy += RecycleObject;
+                newObj.OnDestroy += (obj) => RecycleObject((T)obj);
                 objectsAvailable.Add(newObj);
             }
         }
@@ -42,6 +42,7 @@ namespace MyGame
                 objectsAvailable.Add(obj);
             }
         }
+
 
         public void PrintObjects()
         {

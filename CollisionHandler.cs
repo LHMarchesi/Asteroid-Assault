@@ -41,7 +41,7 @@ namespace MyGame
                 if (!Shield.IsPicked) // Condición de perder
                 {
                     Asteroid asteroid = (Asteroid)gameObject;
-                    asteroid.OnDestroy();
+                    asteroid.Destroy();
                     player.ResetPosition(player);
                     GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
                     SpeedUp.isPicked = false;

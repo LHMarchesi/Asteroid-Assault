@@ -16,7 +16,7 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(position, new Vector2(75, 75));
             objectsMovement = new ObjectsMovement(transform, speed);
-            Destroy += RemoveAsteroid;
+            //Destroy += RemoveAsteroid;
         }
 
         private void CreateAnimations()

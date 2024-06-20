@@ -15,10 +15,19 @@ namespace MyGame
         private DateTime timeLastSpeedUpSpawn;
         private DateTime timeLastShootPUSpawn;
 
-        private float timeBetweenSlowAsteroids = 7f;
+        private float timeBetweenSlowAsteroids = 3f;
         private float timeBetweenShied = 15f;
         private float timeBetweenSpeedUp = 8f;
         private float timeBetweenShootPU = 2f;
+
+
+        GenericPool<Asteroid> asteroidPool;
+        public DifficultManager()
+        {
+
+            asteroidPool = new GenericPool<Asteroid>(10, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
+
+        }
         public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer
         {
             DateTime currentTimeAsteroid = DateTime.Now;
@@ -28,16 +37,21 @@ namespace MyGame
 
             if ((currentTimeAsteroid - timeLastSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
             {
-                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
-                GameManager.Instance.LevelManager.GameObjects.Add(AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
-                timeLastSpawn = currentTimeAsteroid;
+                Asteroid asteroid = asteroidPool.GetObject();
+                if (asteroid != null)
+                {
+                    asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
+                    asteroidPool.PrintObjects();
+                    GameManager.Instance.LevelManager.GameObjects.Add(asteroid);
+                    timeLastSpawn = currentTimeAsteroid;
+                }
             }
 
             if ((currentTimeShield - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
                 GameManager.Instance.LevelManager.GameObjects.Add(new Shield(ObjectsMovement.SetRandomPosition()));
                 timeLastShieldSpawn = currentTimeShield;
-            }  
+            }
 
             if ((currentTimeShootPU - timeLastShootPUSpawn).TotalSeconds >= timeBetweenShootPU)
             {

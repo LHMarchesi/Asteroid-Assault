@@ -14,13 +14,13 @@ namespace MyGame
         private int speedBackwards = 8;
         DateTime timeLastShoot;
         private float timeBetweenShoots = 0.1f;
-        GenericPool<Bullet> bulletPool;
+        //GenericPool<Bullet> bulletPool;
 
 
         public PlayerController(Transform transform)
         {
             this.transform = transform;
-            bulletPool = new GenericPool<Bullet>(10, () => new Bullet(new Vector2(0, 0)));
+            //bulletPool = new GenericPool<Bullet>(10, () => new Bullet(new Vector2(0, 0)));
         }
 
         public void GetInputs()  //Movimiento de jugador
@@ -51,7 +51,7 @@ namespace MyGame
 
             if (Engine.KeyPress(Engine.KEY_ESP))
             {
-                Shoot();
+                //Shoot();
             }
         }
 
@@ -63,20 +63,20 @@ namespace MyGame
         }
 
 
-        public void Shoot()
-        {
-            DateTime currentTime = DateTime.Now;
-            if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
-            {
-                Bullet bullet = bulletPool.GetObject();
-                if (bullet != null)
-                {
-                    bullet.Transform.SetPosition(new Vector2(transform.Position.x, transform.Position.y));
-                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
-                    timeLastShoot = currentTime;
-                }
-            }
+        //public void Shoot()
+        //{
+        //    DateTime currentTime = DateTime.Now;
+        //    if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
+        //    {
+        //        Bullet bullet = bulletPool.GetObject();
+        //        if (bullet != null)
+        //        {
+        //            bullet.Transform.SetPosition(new Vector2(transform.Position.x, transform.Position.y));
+        //            GameManager.Instance.LevelManager.GameObjects.Add(bullet);
+        //            timeLastShoot = currentTime;
+        //        }
+        //    }
 
-        }
+        //}
     }
 }
