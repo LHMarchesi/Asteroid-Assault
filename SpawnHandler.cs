@@ -42,14 +42,14 @@ namespace MyGame
 
         private void AsteroidSpawn(bool canAsteroidSpawn)
         {
-            DateTime currentTime = DateTime.Now;
+            DateTime currentTime = DateTime.Now; 
 
-            if (canAsteroidSpawn && (currentTime - timeLastAsteroidSpawn).TotalSeconds >= timeBetweenSlowAsteroids)
+            if (canAsteroidSpawn && (currentTime - timeLastAsteroidSpawn).TotalSeconds >= timeBetweenSlowAsteroids)  // Uso del timer
             {
                 Asteroid asteroid = asteroidPool.GetObject();
                 if (asteroid != null)
                 {
-                    asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
+                    asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition()); 
                     // asteroidPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(asteroid);  // deberiamos utilizar factori ?
                     timeLastAsteroidSpawn = currentTime;
