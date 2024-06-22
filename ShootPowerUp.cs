@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class ShootPowerUp : GameObject, IAcumulabble, IPickuppeable
+    public class ShootPowerUp : GameObject, IAcumulabble, IPickuppeable, IPoolable
     {
+        public event Action<IPoolable> OnDestroy;
+
         private Animation idleAnimation;
         ObjectsMovement objectsMovement;
 
         private int powerUpSpeed = 5;
         private int maxShoots = 4;
         public static int totalShoots;
-        public static bool IsPicked = false;
+        public static bool canShoot = false;
         public static string totalShootstxt = "0";
 
         public ShootPowerUp(Vector2 position) : base(position)
@@ -24,6 +26,7 @@ namespace MyGame
             transform = new Transform(position, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, powerUpSpeed);
+            OnDestroy += RemoveShootPowerUp;
         }
 
         public override void Update()
@@ -38,14 +41,13 @@ namespace MyGame
 
         public void PickUp()
         {
-            IsPicked = true;
+            canShoot = true;
             Acumulable();
-            Console.WriteLine("A");
         }
 
         public void Acumulable()
         {
-            if (IsPicked)
+            if (canShoot)
             {
                 if (totalShoots < maxShoots)
                 {
@@ -63,13 +65,14 @@ namespace MyGame
         {
             totalShoots--;
             totalShootstxt = totalShoots.ToString();
-            if (totalShoots == 0)
+
+            if (totalShoots <= 0)
             {
-                IsPicked = false;
+                canShoot = false;
             }
             else
             {
-                IsPicked = true;
+                canShoot = true;
             }
         }
 
@@ -85,6 +88,15 @@ namespace MyGame
             currentAnimation = idleAnimation;
         }
 
-        
+        public void Destroy()
+        {
+            OnDestroy?.Invoke(this);
+        }
+
+        private void RemoveShootPowerUp(IPoolable shootPowerUp)
+        {
+            GameManager.Instance.LevelManager.GameObjects.Remove(this);
+        }
+
     }
 }

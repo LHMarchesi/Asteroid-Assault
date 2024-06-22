@@ -12,8 +12,8 @@ namespace MyGame
         private Transform transform;
         private int speed = 10;
         private int speedBackwards = 8;
-        DateTime timeLastShoot;
-        private float timeBetweenShoots = 0.1f;
+        //DateTime timeLastShoot;
+       // private float timeBetweenShoots = 0.1f;
         //GenericPool<Bullet> bulletPool;
 
 

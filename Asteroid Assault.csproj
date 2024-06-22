@@ -59,7 +59,7 @@
     <Compile Include="IAcumulabble.cs" />
     <Compile Include="NormalAsteroid.cs" />
     <Compile Include="ObjectsMovement.cs" />
-    <Compile Include="DificultyManger.cs" />
+    <Compile Include="SpawnHandler.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="IPickuppeable.cs" />
     <Compile Include="Player.cs" />

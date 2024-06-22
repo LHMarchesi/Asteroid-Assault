@@ -61,11 +61,25 @@ namespace MyGame
 
             if (gameObject is IPickuppeable pickupobj)
             {
-                GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                 pickupobj.PickUp();
+
                 if (pickupobj is Shield shieldPicked)
                 {
                     player.shield = shieldPicked;
+                    shieldPicked = (Shield)gameObject;
+                    shieldPicked.Destroy();
+                }
+
+                if (pickupobj is ShootPowerUp)
+                {
+                    ShootPowerUp shooshootPowerUp = (ShootPowerUp)gameObject;
+                    shooshootPowerUp.Destroy();
+                }
+
+                if (pickupobj is SpeedUp)
+                {
+                    SpeedUp speedUp = (SpeedUp)gameObject;
+                    speedUp.Destroy();
                 }
             }
         }

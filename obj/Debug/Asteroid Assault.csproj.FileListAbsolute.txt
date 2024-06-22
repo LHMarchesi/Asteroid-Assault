@@ -191,9 +191,7 @@ A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\MyGame.exe.config
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\MyGame.exe
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\MyGame.pdb
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\Asteroid Assault.csproj.AssemblyReference.cache
-A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\Asteroid Assault.csproj.SuggestedBindingRedirects.cache
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\Asteroid Assault.csproj.CoreCompileInputs.cache
-A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\Asteroid Assault.csproj.CopyComplete
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\MyGame.exe
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\MyGame.pdb
 C:\Users\Tomas\Documents\GitHub\Asteroid-Assault\bin\Debug\assets\Game.png
@@ -392,3 +390,4 @@ A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Asteroid\0.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Asteroid\1.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Asteroid\2.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Asteroid\3.png
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\obj\Debug\Asteroid.3850AE46.Up2Date

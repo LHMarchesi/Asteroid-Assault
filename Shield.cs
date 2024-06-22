@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Shield : GameObject, IPickuppeable, IAcumulabble
+    public class Shield : GameObject, IPickuppeable, IAcumulabble, IPoolable
     {
+        public event Action<IPoolable> OnDestroy;
+
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
+
         public static bool IsPicked = false;
         private int shieldSpeed = 5;
-
         private int maxShield = 2;
+
         private static int totalShield;
         public static string totalShieldtxt = "0";
 
@@ -27,13 +30,14 @@ namespace MyGame
             transform = new Transform(pos, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);
+            OnDestroy += RemoveShield;
         }
 
         public void PickUp()
         {
             IsPicked = true;
             Acumulable();
-            
+
         }
 
         public void Acumulable()
@@ -47,7 +51,7 @@ namespace MyGame
                 }
                 if (totalShield == maxShield)
                 {
-                    totalShieldtxt = maxShield+" (Max)";
+                    totalShieldtxt = maxShield + " (Max)";
                 }
             }
         }
@@ -88,7 +92,14 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
         }
+        public void Destroy()
+        {
+            OnDestroy?.Invoke(this);
+        }
 
-
+        private void RemoveShield(IPoolable shield)
+        {
+            GameManager.Instance.LevelManager.GameObjects.Remove(this);
+        }
     }
 }

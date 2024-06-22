@@ -12,7 +12,7 @@ namespace MyGame
 {
     public class LevelManager
     {
-        private DifficultManager difficultManager = new DifficultManager();
+        private SpawnHandler spawnHandler = new SpawnHandler();
         public List<GameObject> GameObjects = new List<GameObject>();
 
         private Player player = new Player(new Vector2(565, 520));
@@ -52,7 +52,7 @@ namespace MyGame
                 GameObjects[i].Update();
             }
 
-            difficultManager.Spawner();
+            spawnHandler.Spawner();
             _time.Update();
 
             backgroundY += backgroundSpeed;

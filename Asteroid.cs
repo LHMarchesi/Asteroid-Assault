@@ -12,9 +12,11 @@ namespace MyGame
     public class Asteroid : GameObject, IPoolable
     {
         public event Action<IPoolable> OnDestroy;
-        private Animation idleAnimation;
-        public static bool IsFast;
+
         private ObjectsMovement objectsMovement;
+        private Animation idleAnimation;
+
+        public static bool IsFast;  //
 
 
         public Asteroid(Vector2 position, int speed) : base(position) // Construcrtor

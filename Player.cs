@@ -27,7 +27,7 @@ namespace MyGame
             controller = new PlayerController(transform);
             collisionHandler = new CollisionHandler(this);
             originalPosition = position;
-            //Ondie += ResetPosition;
+            //Ondie += ResetPosition;  ??
             IdleAnimation();
         }
 

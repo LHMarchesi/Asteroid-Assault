@@ -1,4 +1,4 @@
-﻿using MyGame.assets;
+﻿/*using MyGame.assets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace MyGame
 {
     public class Bullet : GameObject, IPoolable
     {
-        ObjectsMovement objectsMovement;
+        //ObjectsMovement objectsMovement;
         //int bulletSpeed;
         private Animation idleAnimation;
         public event Action<IPoolable> OnDestroy;
@@ -45,7 +45,7 @@ namespace MyGame
         public override void Update()
         {
             currentAnimation.Update();
-            objectsMovement.MoveUp();
+            //objectsMovement.MoveUp();
         }
     }
-}
+}*/
