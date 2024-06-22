@@ -10,24 +10,27 @@ namespace MyGame
 {
     public class SpawnHandler
     {
-        private DateTime timeLastAsteroidSpawn;
-        private DateTime timeLastShieldSpawn;
-        private DateTime timeLastSpeedUpSpawn;
-        private DateTime timeLastShootPUSpawn;
 
         private float timeBetweenSlowAsteroids = 3f;
         private float timeBetweenShied = 20f;
         private float timeBetweenSpeedUp = 13f;
         private float timeBetweenShootPU = 10f;
 
-
         GenericPool<Asteroid> asteroidPool;
+        GenericPool<Asteroid> fastAsteroidPool;
         GenericPool<PowerUp> shieldPool;
         GenericPool<PowerUp> shootPowerUpPool;
         GenericPool<PowerUp> speedUpPool;
+
+
+        private DateTime timeLastAsteroidSpawn;
+        private DateTime timeLastShieldSpawn;
+        private DateTime timeLastSpeedUpSpawn;
+        private DateTime timeLastShootPUSpawn;
         public SpawnHandler()
         {
             asteroidPool = new GenericPool<Asteroid>(10, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
+            fastAsteroidPool = new GenericPool<Asteroid>(5, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
             shieldPool = new GenericPool<PowerUp>(3, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shield));
             shootPowerUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shoot));
             speedUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.speedUp));

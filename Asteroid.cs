@@ -12,46 +12,12 @@ namespace MyGame
     public class Asteroid : GameObject, IPoolable
     {
         public event Action<IPoolable> OnDestroy;
-
-        private ObjectsMovement objectsMovement;
-        private Animation idleAnimation;
-
-        public static bool IsFast;  //
-
-
+    
         public Asteroid(Vector2 position, int speed) : base(position) // Construcrtor
         {
-            CreateAnimations();
+           
             transform = new Transform(position, new Vector2(75, 75));
-            objectsMovement = new ObjectsMovement(transform, speed);
             OnDestroy += RemoveAsteroid;
-        }
-
-
-        public override void Update()
-        {
-            base.Update();
-            currentAnimation.Update();
-            objectsMovement.MoveDown();
-
-            if (transform.Position.y >= 1000)
-            {
-                transform.SetPosition(ObjectsMovement.SetRandomPosition());
-            }
-        }
-
-        private void CreateAnimations()
-        {
-
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 4; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/Asteroid/{i}.png");
-                idleTextures.Add(frame);
-            }
-            idleAnimation = new Animation("Idle", idleTextures, 20f, true);
-            currentAnimation = idleAnimation;
-
         }
 
         public void Destroy()
