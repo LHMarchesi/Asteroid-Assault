@@ -22,15 +22,15 @@ namespace MyGame
 
 
         GenericPool<Asteroid> asteroidPool;
-        GenericPool<Shield> shieldPool;
-        GenericPool<ShootPowerUp> shootPowerUpPool;
-        GenericPool<SpeedUp> speedUpPool;
+        GenericPool<PowerUp> shieldPool;
+        GenericPool<PowerUp> shootPowerUpPool;
+        GenericPool<PowerUp> speedUpPool;
         public SpawnHandler()
         {
             asteroidPool = new GenericPool<Asteroid>(10, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
-            shieldPool = new GenericPool<Shield>(3, () => new Shield(ObjectsMovement.SetRandomPosition()));
-            shootPowerUpPool = new GenericPool<ShootPowerUp>(2, () => new ShootPowerUp(ObjectsMovement.SetRandomPosition()));
-            speedUpPool = new GenericPool<SpeedUp>(2, () => new SpeedUp(ObjectsMovement.SetRandomPosition()));
+            shieldPool = new GenericPool<PowerUp>(3, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shield));
+            shootPowerUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shoot));
+            speedUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.speedUp));
         }
         public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer
         {
@@ -42,14 +42,14 @@ namespace MyGame
 
         private void AsteroidSpawn(bool canAsteroidSpawn)
         {
-            DateTime currentTime = DateTime.Now; 
+            DateTime currentTime = DateTime.Now;
 
             if (canAsteroidSpawn && (currentTime - timeLastAsteroidSpawn).TotalSeconds >= timeBetweenSlowAsteroids)  // Uso del timer
             {
                 Asteroid asteroid = asteroidPool.GetObject();
                 if (asteroid != null)
                 {
-                    asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition()); 
+                    asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
                     // asteroidPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(asteroid);  // deberiamos utilizar factori ?
                     timeLastAsteroidSpawn = currentTime;
@@ -63,7 +63,7 @@ namespace MyGame
 
             if (canShieldSpawn && (currentTime - timeLastShieldSpawn).TotalSeconds >= timeBetweenShied)
             {
-                Shield shield = shieldPool.GetObject();
+                PowerUp shield = shieldPool.GetObject();
                 if (shield != null)
                 {
                     shield.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
@@ -80,7 +80,7 @@ namespace MyGame
 
             if (canShootPowerUpSpawn && (currentTime - timeLastShootPUSpawn).TotalSeconds >= timeBetweenShootPU)
             {
-                ShootPowerUp shootPowerUp = shootPowerUpPool.GetObject();
+                PowerUp shootPowerUp = shootPowerUpPool.GetObject();
                 if (shootPowerUp != null)
                 {
                     shootPowerUp.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
@@ -97,7 +97,7 @@ namespace MyGame
 
             if (canSpeedUpSpawn && (currentTime - timeLastSpeedUpSpawn).TotalSeconds >= timeBetweenSpeedUp)
             {
-                SpeedUp speedUp = speedUpPool.GetObject();
+                PowerUp speedUp = speedUpPool.GetObject();
                 if (speedUp != null)
                 {
                     speedUp.Transform.SetPosition(ObjectsMovement.SetRandomPosition());

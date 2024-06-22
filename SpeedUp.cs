@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class SpeedUp : GameObject, IPickuppeable, IPoolable
+    public class SpeedUp : PowerUp, IPickuppeable 
     {
-        public event Action<IPoolable> OnDestroy;
         private Animation idleAnimation;
         private ObjectsMovement objectsMovement;
 
@@ -23,7 +22,6 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(pos, new Vector2(0, 0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
-            OnDestroy += RemoveSpeedUp;  
         }
 
         public void PickUp()
@@ -53,17 +51,5 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
         }
-
-        public void Destroy()
-        {
-            OnDestroy?.Invoke(this);
-        }
-
-        private void RemoveSpeedUp(IPoolable speedUp)
-        {
-            GameManager.Instance.LevelManager.GameObjects.Remove(this);
-        }
-
-
     }
 }

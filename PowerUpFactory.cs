@@ -12,7 +12,7 @@ namespace MyGame
     }
     public class PowerUpFactory
     {
-        public static PowerUp CreatePowerUP(Vector2 position, powerUpType type)  // PowerUp deberia ser un Objeto Padre, y los powerUps heredar de este
+        public static PowerUp CreatePowerUp(Vector2 position, powerUpType type)  // PowerUp deberia ser un Objeto Padre, y los powerUps heredar de este
         {
             switch (type)
             {

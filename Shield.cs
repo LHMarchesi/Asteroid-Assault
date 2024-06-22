@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Shield : GameObject, IPickuppeable, IAcumulabble, IPoolable
+    public class Shield : PowerUp, IPickuppeable, IAcumulabble 
     {
-        public event Action<IPoolable> OnDestroy;
+
 
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
@@ -30,7 +30,6 @@ namespace MyGame
             transform = new Transform(pos, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);
-            OnDestroy += RemoveShield;
         }
 
         public void PickUp()
@@ -92,14 +91,6 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
         }
-        public void Destroy()
-        {
-            OnDestroy?.Invoke(this);
-        }
 
-        private void RemoveShield(IPoolable shield)
-        {
-            GameManager.Instance.LevelManager.GameObjects.Remove(this);
-        }
     }
 }

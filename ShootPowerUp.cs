@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class ShootPowerUp : GameObject, IAcumulabble, IPickuppeable, IPoolable
+    public class ShootPowerUp : PowerUp, IAcumulabble, IPickuppeable
     {
-        public event Action<IPoolable> OnDestroy;
 
         private Animation idleAnimation;
         ObjectsMovement objectsMovement;
@@ -26,7 +25,6 @@ namespace MyGame
             transform = new Transform(position, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, powerUpSpeed);
-            OnDestroy += RemoveShootPowerUp;
         }
 
         public override void Update()
@@ -87,16 +85,5 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 40f, true);
             currentAnimation = idleAnimation;
         }
-
-        public void Destroy()
-        {
-            OnDestroy?.Invoke(this);
-        }
-
-        private void RemoveShootPowerUp(IPoolable shootPowerUp)
-        {
-            GameManager.Instance.LevelManager.GameObjects.Remove(this);
-        }
-
     }
 }
