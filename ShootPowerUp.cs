@@ -13,18 +13,20 @@ namespace MyGame
 
         private Animation idleAnimation;
         ObjectsMovement objectsMovement;
+        public event Action<ShootPowerUp> ResetShoot;
 
+        public static int totalShoots;
+        public static string totalShootstxt = "0";
         private int powerUpSpeed = 5;
         private int maxShoots = 4;
-        public static int totalShoots;
-        public static bool canShoot = false;
-        public static string totalShootstxt = "0";
+        private bool canShoot = false;
 
         public ShootPowerUp(Vector2 position) : base(position)
         {
             transform = new Transform(position, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, powerUpSpeed);
+            ResetShoot += ResetValues;
         }
 
         public override void Update()
@@ -41,6 +43,17 @@ namespace MyGame
         {
             canShoot = true;
             Acumulable();
+        }
+
+        public void Reset()
+        {
+            ResetShoot?.Invoke(this);
+        }
+
+        private void ResetValues(ShootPowerUp shootPowerUp)
+        {
+            totalShoots = 0;
+            totalShootstxt = totalShoots.ToString();
         }
 
         public void Acumulable()

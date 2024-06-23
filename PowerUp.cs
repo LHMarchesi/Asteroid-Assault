@@ -9,7 +9,6 @@ namespace MyGame
 {
     public class PowerUp : GameObject, IPoolable
     {
-        public Vector2 Position { get; private set; }
         public event Action<IPoolable> OnDestroy;
 
         public PowerUp(Vector2 position) : base(position)
@@ -22,7 +21,7 @@ namespace MyGame
         {
             OnDestroy?.Invoke(this);
         }
-
+       
         private void RemovePowerUp(IPoolable powerUp)
         {
             GameManager.Instance.LevelManager.GameObjects.Remove(this);

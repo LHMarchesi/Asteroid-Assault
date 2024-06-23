@@ -8,11 +8,11 @@ namespace MyGame
 {
     public enum AsteroidType
     {
-        slow, fast
+        slow, fast, big
     }
     public class AsteroidFactory
     {
-        public static Asteroid CreateAsteroid(Vector2 position, AsteroidType type)  // Factory de enemigos con diferente velocidad
+        public static Asteroid CreateAsteroid(Vector2 position, AsteroidType type)  // Factory de Asteroides 
         {
 
             switch (type)
@@ -23,7 +23,10 @@ namespace MyGame
 
                 case AsteroidType.fast:
                     
-                    return new SlowAsteroid(position, 15);
+                    return new FastAsteroid(position, 15);
+                
+                case AsteroidType.big:
+                    return new BigAsteroid(position, 7);
             }
             return null;
         }

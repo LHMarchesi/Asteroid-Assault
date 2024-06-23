@@ -16,7 +16,16 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(position, new Vector2(75, 75));
             objectsMovement = new ObjectsMovement(transform, speed);
-            //Destroy += RemoveAsteroid;
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            objectsMovement.MoveDown();
+            if (transform.Position.y >= 1000)
+            {
+                transform.SetPosition(ObjectsMovement.SetRandomPosition());
+            }
         }
 
         private void CreateAnimations()
@@ -31,11 +40,6 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
 
-        }
-
-        private void RemoveAsteroid(Asteroid asteroid)
-        {
-            GameManager.Instance.LevelManager.GameObjects.Remove(asteroid);
         }
     }
 }

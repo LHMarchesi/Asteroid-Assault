@@ -23,8 +23,6 @@ namespace MyGame
 
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
 
-     
-
         private Time _time;
 
         // Escenas de juego
@@ -37,11 +35,10 @@ namespace MyGame
         //Escudo
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
 
-        
+
         public void Initialize()
         {
             _time.Initialize();
-
         }
         public void Update()
         {
@@ -78,8 +75,8 @@ namespace MyGame
 
 
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
-            Engine.DrawText("Escudos totales : " + Shield.totalShieldtxt , 10, 10, 255, 255, 255, font);
-            Engine.DrawText("Balas totales : " + ShootPowerUp.totalShootstxt , 1000, 10, 255, 255, 255, font);
+            Engine.DrawText("Escudos totales : " + Shield.totalShieldtxt, 10, 10, 255, 255, 255, font);
+            Engine.DrawText("Balas totales : " + ShootPowerUp.totalShootstxt, 1000, 10, 255, 255, 255, font);
             Engine.Show();
         }
 

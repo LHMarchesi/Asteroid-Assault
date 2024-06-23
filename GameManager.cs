@@ -13,9 +13,10 @@ namespace MyGame
             menu, game, win, lose, credits, pause
         }
 
+        static public GameStatus gameStart = GameStatus.menu;
+
         private static GameManager instance;
         private LevelManager levelManager;
-        static public GameStatus gameStart = GameStatus.menu;
         public LevelManager LevelManager => levelManager;
 
         public static GameManager Instance
@@ -43,7 +44,7 @@ namespace MyGame
             {
                 case GameStatus.menu:
 
-                    if (Engine.KeyPress(Engine.KEY_ESP))
+                    if (Engine.KeyPress(Engine.KEY_ESP)) // Menu
                     {
                         Initialize();
                         gameStart = GameStatus.game;
@@ -53,14 +54,14 @@ namespace MyGame
                 case GameStatus.game:
 
                     levelManager.Update();
-                    if (Engine.KeyPress(Engine.KEY_ESC))  // Pausa
+                    if (Engine.KeyPress(Engine.KEY_ESC))  
                     {
                         gameStart = GameStatus.pause;
                     } 
                     break;
 
                 case GameStatus.win:
-                    if (Engine.KeyPress(Engine.KEY_ESP))
+                    if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
                         Initialize();
                         gameStart = GameStatus.game;
@@ -68,7 +69,7 @@ namespace MyGame
                     break;
 
                 case GameStatus.lose:
-                    if (Engine.KeyPress(Engine.KEY_ESP))
+                    if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
                         Initialize();
                         gameStart = GameStatus.game;

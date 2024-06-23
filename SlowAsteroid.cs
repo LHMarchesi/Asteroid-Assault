@@ -25,7 +25,7 @@ namespace MyGame
             objectsMovement.MoveDown();
             if (transform.Position.y >= 1000)
             {
-                GameManager.Instance.LevelManager.GameObjects.Remove(this);
+                transform.SetPosition(ObjectsMovement.SetRandomPosition());
             }
         }
 

@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MyGame
 {
     public class Player : GameObject
     {
-        //public event Action<Player> Ondie;
+        public event Action<Player> onDestroy;
 
         public PlayerController controller;
         private PlayerLimits playerLimits;
@@ -17,9 +18,11 @@ namespace MyGame
         private Vector2 originalPosition;
 
         public Shield shield;
+        public PowerUp powerUp;
+
         static private Animation idleAnimation;
 
-        public bool candie = true;  
+        public bool candie = true;
 
         public Player(Vector2 position) : base(position)
         {
@@ -27,7 +30,7 @@ namespace MyGame
             controller = new PlayerController(transform);
             collisionHandler = new CollisionHandler(this);
             originalPosition = position;
-            //Ondie += ResetPosition;  ??
+            onDestroy += ResetPosition;
             IdleAnimation();
         }
 
@@ -41,15 +44,19 @@ namespace MyGame
 
             if (Time.timeElapse > Time.winTime)
             {
-                Shield.IsPicked = false;
-                SpeedUp.isPicked = false;
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
             }
         }
-      
-        public void ResetPosition(Player player)
+
+        public void Destroy()
+        {
+            onDestroy?.Invoke(this);
+        }
+
+        private void ResetPosition(Player player)
         {
             transform.SetPosition(originalPosition);
+           
         }
 
 

@@ -57,7 +57,6 @@
     <Compile Include="IPoolable.cs" />
     <Compile Include="GenericPool.cs" />
     <Compile Include="IAcumulabble.cs" />
-    <Compile Include="NormalAsteroid.cs" />
     <Compile Include="ObjectsMovement.cs" />
     <Compile Include="PowerUp.cs" />
     <Compile Include="PowerUpFactory.cs" />

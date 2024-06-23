@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Shield : PowerUp, IPickuppeable, IAcumulabble 
+    public class Shield : PowerUp, IPickuppeable, IAcumulabble
     {
-
-
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
 
@@ -23,13 +21,12 @@ namespace MyGame
         private static int totalShield;
         public static string totalShieldtxt = "0";
 
-
-
         public Shield(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);
+           
         }
 
         public void PickUp()

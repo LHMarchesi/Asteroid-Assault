@@ -38,20 +38,21 @@ namespace MyGame
         {
             if (gameObject is Asteroid)
             {
-                if (!Shield.IsPicked) // Condición de perder
+                if (!Shield.IsPicked) // Lose Condition
                 {
                     Asteroid asteroid = (Asteroid)gameObject;
                     asteroid.Destroy();
-                    player.ResetPosition(player);
+                    player.Destroy();
+
+
                     GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
-                    SpeedUp.isPicked = false;
                 }
                 else
                 {
                     GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
                     player.candie = true;
-                    Shield.IsPicked = false;
 
+                    Shield.IsPicked = false;
                     if (player.shield != null)
                     {
                         player.shield.restarAcumulable();
@@ -59,11 +60,11 @@ namespace MyGame
                 }
             }
 
-            if (gameObject is IPickuppeable pickupobj)
+            if (gameObject is IPickuppeable pickupobj) // Colision con PowerUps
             {
                 pickupobj.PickUp();
 
-                if (pickupobj is Shield shieldPicked)
+                if (pickupobj is Shield shieldPicked)  
                 {
                     player.shield = shieldPicked;
                     shieldPicked = (Shield)gameObject;

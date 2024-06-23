@@ -22,6 +22,8 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(pos, new Vector2(0, 0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
+         
+
         }
 
         public void PickUp()

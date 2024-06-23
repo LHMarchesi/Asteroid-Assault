@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Asteroid : GameObject, IPoolable
+    public class Asteroid : GameObject, IPoolable  //Objeto Padre 
     {
         public event Action<IPoolable> OnDestroy;
     
-        public Asteroid(Vector2 position, int speed) : base(position) // Construcrtor
+        public Asteroid(Vector2 position, int speed) : base(position) 
         {
            
             transform = new Transform(position, new Vector2(75, 75));
