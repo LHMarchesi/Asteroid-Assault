@@ -17,6 +17,10 @@ namespace MyGame
         private CollisionHandler collisionHandler;
         private Vector2 originalPosition;
 
+        private DateTime timeLastShoot;
+        private float timeBetweenShoots = 1f;
+        private GenericPool<Bullet> bulletPool;
+
         public Shield shield;
         public PowerUp powerUp;
 
@@ -30,6 +34,7 @@ namespace MyGame
             controller = new PlayerController(transform);
             collisionHandler = new CollisionHandler(this);
             originalPosition = position;
+            bulletPool = new GenericPool<Bullet>(8, () => new Bullet(new Vector2(Transform.Position.x, Transform.Position.y + Transform.Scale.y)));
             onDestroy += ResetPosition;
             IdleAnimation();
         }
@@ -57,6 +62,11 @@ namespace MyGame
         {
             transform.SetPosition(originalPosition);
            
+        }
+
+        public float GetPositionX()
+        {
+            return transform.Position.x;
         }
 
 
@@ -135,6 +145,26 @@ namespace MyGame
                 idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
                 currentAnimation = idleAnimation;
             }
+        }
+
+        public void Shoot()
+        {
+            //ShootPowerUp.restarAcumulable();
+            DateTime currentTime = DateTime.Now;
+            if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
+            {
+                Bullet bullet = bulletPool.GetObject();
+                Bullet bullet2 = bulletPool.GetObject();
+                if (bullet != null)
+                {
+                    bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60 ));
+                    bullet2.Transform.SetPosition(new Vector2(transform.Position.x + 20, transform.Position.y + 60));
+                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
+                    GameManager.Instance.LevelManager.GameObjects.Add(bullet2);
+                    timeLastShoot = currentTime;
+                }
+            }
+
         }
     }
 }

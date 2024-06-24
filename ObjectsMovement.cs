@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,6 @@ namespace MyGame
     {
         private Transform transform;
         private int speed;
-
         public ObjectsMovement(Transform transform, int speed)
         {
             this.transform = transform;
@@ -33,7 +33,7 @@ namespace MyGame
         {
             // falta ver si posicion no esta ocupada 
             RandomNumber random = new RandomNumber();
-            int randomX = random.Rand(-100, 1200);
+            int randomX = random.Rand(-50, 1200);
             int randomY = random.Rand(-1000, -200);
             Vector2 randomPos = new Vector2(randomX, randomY);
             return randomPos;

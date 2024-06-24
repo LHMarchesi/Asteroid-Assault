@@ -32,25 +32,42 @@ namespace MyGame
         private DateTime timeLastShieldSpawn;
         private DateTime timeLastSpeedUpSpawn;
         private DateTime timeLastShootPUSpawn;
+
         public SpawnHandler()
         {
-            slowAsteroidPool = new GenericPool<Asteroid>(15, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
-            fastAsteroidPool = new GenericPool<Asteroid>(7, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
-            BigAsteroidPool = new GenericPool<Asteroid>(2, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.big));
+            slowAsteroidPool = new GenericPool<Asteroid>(8, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
+            fastAsteroidPool = new GenericPool<Asteroid>(15, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
+            BigAsteroidPool = new GenericPool<Asteroid>(6, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.big));
 
             shieldPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shield));
             shootPowerUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shoot));
             speedUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.speedUp));
         }
+
         public void Spawner()// Spawn de  enemigos y power Ups, utilizando un timer
         {
-            SlowAsteroidSpawn(true);
-            FastAsteroidSpawn(true);
-            BigAsteroidSpawn(true);
+            if (Time.timeElapse >= 2)
+            {
+                SlowAsteroidSpawn(true);
+            }
+            if (Time.timeElapse >= 3)
+            {
+                FastAsteroidSpawn(true);
+                SpeedUpSpawn(true);
+            }
+            if (Time.timeElapse >= 5)
+            {
+                BigAsteroidSpawn(true);
 
-            ShieldSpawn(true);
-            ShootPowerUPSpawn(true);
-            SpeedUpSpawn(true);
+            }
+            if (Time.timeElapse >= 7)
+            {
+                ShieldSpawn(true);
+            }
+            if (Time.timeElapse >= 10)
+            {
+                ShootPowerUPSpawn(true);
+            }
         }
 
         private void SlowAsteroidSpawn(bool canSlowAsteroidSpawn)

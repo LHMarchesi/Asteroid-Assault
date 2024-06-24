@@ -37,7 +37,7 @@ namespace MyGame
                 IntPtr frame = Engine.LoadImage($"assets/FastAsteroid/{i}.png");
                 idleTextures.Add(frame);
             }
-            idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+            idleAnimation = new Animation("Idle", idleTextures, 15f, true);
             currentAnimation = idleAnimation;
 
         }

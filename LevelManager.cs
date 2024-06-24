@@ -23,7 +23,7 @@ namespace MyGame
 
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
 
-        private Time _time;
+        public Time _time;
 
         // Escenas de juego
         public IntPtr winScreen = Engine.LoadImage("assets/Win.png");
@@ -39,6 +39,7 @@ namespace MyGame
         public void Initialize()
         {
             _time.Initialize();
+            
         }
         public void Update()
         {

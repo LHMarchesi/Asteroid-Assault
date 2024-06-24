@@ -36,5 +36,6 @@ namespace MyGame
             position.x = newPosition.x;
             position.y = newPosition.y;
         }
+
     }
 }

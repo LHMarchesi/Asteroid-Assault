@@ -51,7 +51,7 @@ namespace MyGame
 
             if (Engine.KeyPress(Engine.KEY_ESP))
             {
-                //Shoot();
+                GameManager.Instance.LevelManager.Player.Shoot();
             }
         }
 
@@ -62,21 +62,5 @@ namespace MyGame
             LevelManager.backgroundSpeed += 0.1f;
         }
 
-
-        //public void Shoot()
-        //{
-        //    DateTime currentTime = DateTime.Now;
-        //    if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
-        //    {
-        //        Bullet bullet = bulletPool.GetObject();
-        //        if (bullet != null)
-        //        {
-        //            bullet.Transform.SetPosition(new Vector2(transform.Position.x, transform.Position.y));
-        //            GameManager.Instance.LevelManager.GameObjects.Add(bullet);
-        //            timeLastShoot = currentTime;
-        //        }
-        //    }
-
-        //}
     }
 }

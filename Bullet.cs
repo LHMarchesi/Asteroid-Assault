@@ -1,4 +1,4 @@
-﻿/*using MyGame.assets;
+﻿using MyGame.assets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +9,16 @@ namespace MyGame
 {
     public class Bullet : GameObject, IPoolable
     {
-        //ObjectsMovement objectsMovement;
-        //int bulletSpeed;
+        ObjectsMovement objectsMovement;
+        private int bulletSpeed = 10;
         private Animation idleAnimation;
         public event Action<IPoolable> OnDestroy;
 
-
-        private List<Bullet> bulletsInUse = new List<Bullet>();
-        private List<Bullet> bulletsAvailable = new List<Bullet>();
         public Bullet(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(5, 5));
-            //objectsMovement = new ObjectsMovement(transform, bulletSpeed);
+            objectsMovement = new ObjectsMovement(transform, bulletSpeed);
+            OnDestroy += RemoveBullet;
             CreateAnimations();
         }
 
@@ -36,16 +34,15 @@ namespace MyGame
             currentAnimation = idleAnimation;
         }
 
-        private void DestroyBullet()
+        private void RemoveBullet(IPoolable bullet)
         {
-            GameManager.Instance.LevelManager.GameObjects.Remove(this);
-            //OnDestroy?.Invoke();
+                GameManager.Instance.LevelManager.GameObjects.Remove(this);
         }
 
         public override void Update()
         {
             currentAnimation.Update();
-            //objectsMovement.MoveUp();
+            objectsMovement.MoveUp();
         }
     }
-}*/
+}
