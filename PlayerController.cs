@@ -49,7 +49,7 @@ namespace MyGame
                 GameManager.Instance.LevelManager.Player.IdleAnimation();
             }
 
-            if (Engine.KeyPress(Engine.KEY_ESP))
+            if (Engine.KeyPress(Engine.KEY_ESP) && ShootPowerUp.canShoot == true)
             {
                 GameManager.Instance.LevelManager.Player.Shoot();
             }

@@ -31,6 +31,11 @@ namespace MyGame
         public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.jpg");
         public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.jpg");
         public IntPtr pauseScreen = Engine.LoadImage("assets/Pause.jpg");
+        public IntPtr skinScreen = Engine.LoadImage("assets/SkinSelector.jpg");
+
+        //Herramientas Seleccion Skin
+        public IntPtr boxSelector = Engine.LoadImage("assets/BoxSelector.png");
+        public Vector2 skin1 = new Vector2(20,110);
 
         //Escudo
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
@@ -39,7 +44,19 @@ namespace MyGame
         public void Initialize()
         {
             _time.Initialize();
-            
+
+            if (Player.ship1)
+            {
+                shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
+            }
+            else if (Player.ship2)
+            {
+                shieldIsPicked = Engine.LoadImage("assets/ShieldShip/1.png");
+            }
+            else if (Player.ship3)
+            {
+                shieldIsPicked = Engine.LoadImage("assets/ShieldShip/2.png");
+            }
         }
         public void Update()
         {
@@ -62,6 +79,7 @@ namespace MyGame
 
             Engine.Draw(gameScreen, 0, backgroundY, 1280, 4096);
             player.Render();
+            
 
             if (Shield.IsPicked) // Si tiene el escudo
             {

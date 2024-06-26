@@ -19,7 +19,7 @@ namespace MyGame
         public static string totalShootstxt = "0";
         private int powerUpSpeed = 5;
         private int maxShoots = 4;
-        private bool canShoot = false;
+        static public bool canShoot = false;
 
         public ShootPowerUp(Vector2 position) : base(position)
         {

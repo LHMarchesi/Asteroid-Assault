@@ -10,7 +10,7 @@ namespace MyGame
     {
         public enum GameStatus
         {
-            menu, game, win, lose, credits, pause
+            menu, skinselector, game, win, lose, credits, pause
         }
 
         static public GameStatus gameStart = GameStatus.menu;
@@ -47,9 +47,40 @@ namespace MyGame
                     if (Engine.KeyPress(Engine.KEY_ESP)) // Menu
                     {
                         Initialize();
-                        gameStart = GameStatus.game;
+                        gameStart = GameStatus.skinselector;
                     }
                     break;
+
+                case GameStatus.skinselector:
+
+                    if (Engine.KeyPress(Engine.KEY_1)) // Menu
+                    {
+                        levelManager.skin1.x = 20;
+                        Player.ship1 = true;
+                        Player.ship2 = false;
+                        Player.ship3 = false;
+                    }
+                    if (Engine.KeyPress(Engine.KEY_2)) // Menu
+                    {
+                        levelManager.skin1.x = 385;
+                        Player.ship1 = false;
+                        Player.ship2 = true;
+                        Player.ship3 = false;
+                    }
+                    if (Engine.KeyPress(Engine.KEY_3)) // Menu
+                    {
+                        levelManager.skin1.x = 760;
+                        Player.ship1 = false;
+                        Player.ship2 = false;
+                        Player.ship3 = true;
+                    }
+                    if (Engine.KeyPress(Engine.KEY_ESP)) // Menu
+                    {
+                        Initialize();
+                        gameStart = GameStatus.game;
+                    }
+
+                    break;  
 
                 case GameStatus.game:
 
@@ -106,6 +137,13 @@ namespace MyGame
                     Engine.Draw(levelManager.menuScreen, 0, 0);
                     Engine.Show();
                     break;
+
+                case GameStatus.skinselector:
+                    Engine.Clear();
+                    Engine.Draw(levelManager.skinScreen, 0, 0);
+                    Engine.Draw(levelManager.boxSelector, levelManager.skin1.x, levelManager.skin1.y);
+                    Engine.Show();
+                     break;
 
                 case GameStatus.pause:
 
