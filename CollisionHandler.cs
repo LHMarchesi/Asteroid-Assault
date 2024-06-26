@@ -44,16 +44,14 @@ namespace MyGame
                     Asteroid asteroid = (Asteroid)gameObject;
                     asteroid.Destroy();
                     player.Destroy();
-
-
                     GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.lose);
                 }
                 else
                 {
                     GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                    Shield.IsPicked = false;
                     player.candie = true;
 
-                    Shield.IsPicked = false;
                     if (player.shield != null)
                     {
                         player.shield.restarAcumulable();
@@ -65,7 +63,7 @@ namespace MyGame
             {
                 pickupobj.PickUp();
 
-                if (pickupobj is Shield shieldPicked)  
+                if (pickupobj is Shield shieldPicked)
                 {
                     player.shield = shieldPicked;
                     shieldPicked = (Shield)gameObject;

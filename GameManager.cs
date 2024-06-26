@@ -44,7 +44,7 @@ namespace MyGame
             {
                 case GameStatus.menu:
 
-                    if (Engine.KeyPress(Engine.KEY_ESP)) // Menu
+                    if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
                         Initialize();
                         gameStart = GameStatus.skinselector;
@@ -53,28 +53,28 @@ namespace MyGame
 
                 case GameStatus.skinselector:
 
-                    if (Engine.KeyPress(Engine.KEY_1)) // Menu
+                    if (Engine.KeyPress(Engine.KEY_1)) 
                     {
                         levelManager.skin1.x = 20;
                         Player.ship1 = true;
                         Player.ship2 = false;
                         Player.ship3 = false;
                     }
-                    if (Engine.KeyPress(Engine.KEY_2)) // Menu
+                    if (Engine.KeyPress(Engine.KEY_2)) 
                     {
                         levelManager.skin1.x = 385;
                         Player.ship1 = false;
                         Player.ship2 = true;
                         Player.ship3 = false;
                     }
-                    if (Engine.KeyPress(Engine.KEY_3)) // Menu
+                    if (Engine.KeyPress(Engine.KEY_3)) 
                     {
                         levelManager.skin1.x = 760;
                         Player.ship1 = false;
                         Player.ship2 = false;
                         Player.ship3 = true;
                     }
-                    if (Engine.KeyPress(Engine.KEY_ESP)) // Menu
+                    if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
                         Initialize();
                         gameStart = GameStatus.game;

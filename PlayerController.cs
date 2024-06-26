@@ -12,15 +12,10 @@ namespace MyGame
         private Transform transform;
         private int speed = 10;
         private int speedBackwards = 8;
-        //DateTime timeLastShoot;
-       // private float timeBetweenShoots = 0.1f;
-        //GenericPool<Bullet> bulletPool;
-
 
         public PlayerController(Transform transform)
         {
             this.transform = transform;
-            //bulletPool = new GenericPool<Bullet>(10, () => new Bullet(new Vector2(0, 0)));
         }
 
         public void GetInputs()  //Movimiento de jugador

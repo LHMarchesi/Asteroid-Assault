@@ -33,7 +33,7 @@ namespace MyGame
         private DateTime timeLastSpeedUpSpawn;
         private DateTime timeLastShootPUSpawn;
 
-        public SpawnHandler()
+        public SpawnHandler()  // Pools 
         {
             slowAsteroidPool = new GenericPool<Asteroid>(8, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.slow));
             fastAsteroidPool = new GenericPool<Asteroid>(15, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
@@ -80,7 +80,6 @@ namespace MyGame
                 if (asteroid != null)
                 {
                     asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // slowAsteroidPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(asteroid);
                     timeLastSlowAsteroidSpawn = currentTime;
                 }
@@ -96,7 +95,6 @@ namespace MyGame
                 if (asteroid != null)
                 {
                     asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // fastAsteroidPoolfastAsteroidPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(asteroid);
                     timeLastFastAsteroidSpawn = currentTime;
                 }
@@ -112,7 +110,6 @@ namespace MyGame
                 if (asteroid != null)
                 {
                     asteroid.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // BigAsteroidPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(asteroid);
                     timeLastBigAsteroidSpawn = currentTime;
                 }
@@ -129,7 +126,6 @@ namespace MyGame
                 if (shield != null)
                 {
                     shield.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // shieldPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(shield);
                     timeLastShieldSpawn = currentTime;
                 }
@@ -146,7 +142,6 @@ namespace MyGame
                 if (shootPowerUp != null)
                 {
                     shootPowerUp.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // shootPowerUpPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(shootPowerUp);
                     timeLastShootPUSpawn = currentTime;
                 }
@@ -163,7 +158,6 @@ namespace MyGame
                 if (speedUp != null)
                 {
                     speedUp.Transform.SetPosition(ObjectsMovement.SetRandomPosition());
-                    // speedUpPool.PrintObjects();
                     GameManager.Instance.LevelManager.GameObjects.Add(speedUp);
                     timeLastSpeedUpSpawn = currentTime;
                 }

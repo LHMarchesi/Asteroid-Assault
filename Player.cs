@@ -56,6 +56,25 @@ namespace MyGame
             }
         }
 
+        public void Shoot()
+        {
+            DateTime currentTime = DateTime.Now;
+            if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
+            {
+                Bullet bullet = bulletPool.GetObject();
+                Bullet bullet2 = bulletPool.GetObject();
+                if (bullet != null)
+                {
+                    bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60));
+                    bullet2.Transform.SetPosition(new Vector2(transform.Position.x + 20, transform.Position.y + 60));
+                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
+                    GameManager.Instance.LevelManager.GameObjects.Add(bullet2);
+                    timeLastShoot = currentTime;
+                }
+                shootPowerUp.restarAcumulable();
+            }
+        }
+
         public void Destroy()
         {
             onDestroy?.Invoke(this);
@@ -67,13 +86,6 @@ namespace MyGame
 
         }
 
-        public float GetPositionX()
-        {
-            return transform.Position.x;
-        }
-
-
-        // Animations
         public void IdleAnimation()
         {
             if (ship1)
@@ -181,28 +193,6 @@ namespace MyGame
                 idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
-        }
-
-        public void Shoot()
-        {
-            DateTime currentTime = DateTime.Now;
-            if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
-            {
-                Bullet bullet = bulletPool.GetObject();
-                Bullet bullet2 = bulletPool.GetObject();
-                if (bullet != null)
-                {
-                    bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60));
-                    bullet2.Transform.SetPosition(new Vector2(transform.Position.x + 20, transform.Position.y + 60));
-                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
-                    GameManager.Instance.LevelManager.GameObjects.Add(bullet2);
-                    timeLastShoot = currentTime;
-                }
-
-                shootPowerUp.restarAcumulable();
-            }
-            
-            
         }
     }
 }
