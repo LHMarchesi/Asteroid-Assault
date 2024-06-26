@@ -3,11 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65F1F20C-94C9-4D18-A0AB-DD5B717AEA42}|..\\AsteroidAssaultTest\\AsteroidAssaultTest.csproj|c:\\users\\enum\\documents\\github\\asteroidassaulttest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|c:\\users\\enum\\documents\\github\\asteroid-assault\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\shootpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:shootpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|c:\\users\\enum\\documents\\github\\asteroid-assault\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|c:\\users\\enum\\documents\\github\\asteroid-assault\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,11 +34,7 @@
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|c:\\users\\enum\\documents\\github\\asteroid-assault\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -37,10 +48,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PowerUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:PowerUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\shootpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|solutionrelative:shootpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|Asteroid Assault.csproj|C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Shield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,11 +69,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PowerUp.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PowerUp.cs",
               "RelativeDocumentMoniker": "PowerUp.cs",
@@ -79,7 +86,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Engine.cs",
+              "RelativeDocumentMoniker": "Engine.cs",
+              "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Engine.cs",
+              "RelativeToolTip": "Engine.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAwAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T07:47:32.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\AsteroidAssaultTest\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\AsteroidAssaultTest\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\AsteroidAssaultTest\\UnitTest1.cs",
+              "RelativeToolTip": "..\\AsteroidAssaultTest\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T07:42:53.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PlayerController.cs",
+              "RelativeDocumentMoniker": "PlayerController.cs",
+              "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PlayerController.cs",
+              "RelativeToolTip": "PlayerController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T03:21:07.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Animation.cs",
               "RelativeDocumentMoniker": "Animation.cs",
@@ -87,12 +133,11 @@
               "RelativeToolTip": "Animation.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T06:04:22.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T06:04:22.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "IAcumulabble.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\IAcumulabble.cs",
               "RelativeDocumentMoniker": "IAcumulabble.cs",
@@ -104,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "PowerUpFactory.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PowerUpFactory.cs",
               "RelativeDocumentMoniker": "PowerUpFactory.cs",
@@ -112,50 +157,37 @@
               "RelativeToolTip": "PowerUpFactory.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T03:25:13.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T03:25:13.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Bullet.cs",
               "RelativeDocumentMoniker": "Bullet.cs",
               "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Bullet.cs",
               "RelativeToolTip": "Bullet.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowF4AAAAnAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowEYAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-26T03:25:02.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PlayerController.cs",
-              "RelativeDocumentMoniker": "PlayerController.cs",
-              "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\PlayerController.cs",
-              "RelativeToolTip": "PlayerController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwDMAAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T03:21:07.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "ShootPowerUp.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\ShootPowerUp.cs",
               "RelativeDocumentMoniker": "ShootPowerUp.cs",
               "ToolTip": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\ShootPowerUp.cs",
               "RelativeToolTip": "ShootPowerUp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAOAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAAC0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T03:51:39.568Z"
+              "WhenOpened": "2024-06-23T03:51:39.568Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Shield.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Shield.cs",
               "RelativeDocumentMoniker": "Shield.cs",
@@ -167,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "SpeedUp.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\SpeedUp.cs",
               "RelativeDocumentMoniker": "SpeedUp.cs",
@@ -179,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "LevelManager.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\LevelManager.cs",
               "RelativeDocumentMoniker": "LevelManager.cs",
@@ -187,12 +219,11 @@
               "RelativeToolTip": "LevelManager.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAA6wCUAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T02:22:04.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T02:22:04.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
@@ -200,12 +231,11 @@
               "RelativeToolTip": "Player.cs",
               "ViewState": "AQIAACEAAAAAAAAAAIA9wJ8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T02:12:59.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T02:12:59.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CollisionHandler.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\CollisionHandler.cs",
               "RelativeDocumentMoniker": "CollisionHandler.cs",
@@ -213,12 +243,11 @@
               "RelativeToolTip": "CollisionHandler.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwCEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T02:12:39.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T02:12:39.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Enum\\Documents\\GitHub\\Asteroid-Assault\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
@@ -226,8 +255,7 @@
               "RelativeToolTip": "GameManager.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAcwDYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T23:05:18.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T23:05:18.972Z"
             }
           ]
         }
