@@ -17,6 +17,7 @@ namespace MyGame
 
         private static GameManager instance;
         private LevelManager levelManager;
+        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0));
         public LevelManager LevelManager => levelManager;
 
         public static GameManager Instance
@@ -116,6 +117,7 @@ namespace MyGame
                     {
                         Initialize();
                         gameStart = GameStatus.game;
+                        shootPowerUp.Reset();
                         Shield.IsPicked = false;
                         SpeedUp.isPicked = false;
                     }
