@@ -48,6 +48,7 @@ namespace MyGame
         public void Reset()
         {
             ResetShoot?.Invoke(this);
+            canShoot = false;
         }
 
         private void ResetValues(ShootPowerUp shootPowerUp)

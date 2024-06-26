@@ -78,12 +78,12 @@ namespace MyGame
         public void Destroy()
         {
             onDestroy?.Invoke(this);
+            shootPowerUp.Reset();
         }
 
         private void ResetPosition(Player player)
         {
             transform.SetPosition(originalPosition);
-
         }
 
         public void IdleAnimation()

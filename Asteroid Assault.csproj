@@ -53,7 +53,6 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="CollisionHandler.cs" />
     <Compile Include="FastAsteroid.cs" />
-    <Compile Include="ICollider.cs" />
     <Compile Include="IPoolable.cs" />
     <Compile Include="GenericPool.cs" />
     <Compile Include="IAcumulabble.cs" />

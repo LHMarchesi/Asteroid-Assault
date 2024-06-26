@@ -18,7 +18,7 @@ namespace MyGame
         private int shieldSpeed = 5;
         private int maxShield = 2;
 
-        private static int totalShield;
+        public static int totalShield;
         public static string totalShieldtxt = "0";
 
         public Shield(Vector2 pos) : base(pos)
