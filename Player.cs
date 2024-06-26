@@ -84,7 +84,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Idle/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
@@ -95,7 +95,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Idle/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
@@ -106,7 +106,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Idle/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
@@ -120,7 +120,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Left/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
@@ -131,7 +131,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Left/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
@@ -142,7 +142,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Left/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
@@ -156,7 +156,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Right/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
@@ -167,7 +167,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Right/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
@@ -178,7 +178,7 @@ namespace MyGame
                     IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Right/{i}.png");
                     idleTextures.Add(frame);
                 }
-                idleAnimation = new Animation("Idle", idleTextures, 0.2f, true);
+                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }

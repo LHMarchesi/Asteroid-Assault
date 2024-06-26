@@ -34,23 +34,6 @@ namespace MyGame
                 }
             }
         }
-        public void CheckBulletCollisions()
-        {
-            for (int i = 0; i < GameManager.Instance.LevelManager.GameObjects.Count; i++)
-            {
-                GameObject gameObject = GameManager.Instance.LevelManager.GameObjects[i];
-                float distanceX = Math.Abs((gameObject.Transform.Position.x + (gameObject.Transform.Scale.x / 2)) - (player.Transform.Position.x + (player.Transform.Scale.x / 2)));
-                float distanceY = Math.Abs((gameObject.Transform.Position.y + (gameObject.Transform.Scale.y / 2)) - (player.Transform.Position.y + (player.Transform.Scale.y / 2)));
-
-                float sumHalfWidth = gameObject.Transform.Scale.x / 2 + player.Transform.Scale.x / 2;
-                float sumHalfH = gameObject.Transform.Scale.y / 2 + player.Transform.Scale.y / 2;
-
-                if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colisión
-                {
-                    HandleCollision(gameObject);
-                }
-            }
-        }
 
         private void HandleCollision(GameObject gameObject)
         {

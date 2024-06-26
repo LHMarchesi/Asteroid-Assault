@@ -35,7 +35,7 @@ namespace MyGame
 
         //Herramientas Seleccion Skin
         public IntPtr boxSelector = Engine.LoadImage("assets/BoxSelector.png");
-        public Vector2 skin1 = new Vector2(20,110);
+        public Vector2 skin1 = new Vector2(20,115);
 
         //Escudo
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");

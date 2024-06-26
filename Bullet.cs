@@ -69,6 +69,35 @@ namespace MyGame
         {
             currentAnimation.Update();
             objectsMovement.MoveUp();
+            CheckCollitions();
         }
+
+        private void CheckCollitions()
+        {
+            for (int i = 0; i < GameManager.Instance.LevelManager.GameObjects.Count; i++)
+            {
+                GameObject gameObject = GameManager.Instance.LevelManager.GameObjects[i];
+                float distanceX = Math.Abs((gameObject.Transform.Position.x + (gameObject.Transform.Scale.x / 2)) - (Transform.Position.x + (Transform.Scale.x / 2)));
+                float distanceY = Math.Abs((gameObject.Transform.Position.y + (gameObject.Transform.Scale.y / 2)) - (Transform.Position.y + (Transform.Scale.y / 2)));
+
+                float sumHalfWidth = gameObject.Transform.Scale.x / 2 + Transform.Scale.x / 2;
+                float sumHalfH = gameObject.Transform.Scale.y / 2 + Transform.Scale.y / 2;
+
+                if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colisión
+                {
+                    HandleCollision(gameObject);
+                }
+            }
+        }
+
+        private void HandleCollision(GameObject gameObject)
+        {
+            if (gameObject is Asteroid)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                GameManager.Instance.LevelManager.GameObjects.Remove(this);
+            }
+        }
+
     }
 }
