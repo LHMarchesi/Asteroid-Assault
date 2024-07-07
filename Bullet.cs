@@ -51,36 +51,17 @@ namespace MyGame
         {
             if (Player.ship1)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 2; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Bullet/Bullets/1/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 10f, true);
-                currentAnimation = idleAnimation;
-
+                    idleAnimation = Animator.CreateAnimation("Ship1BulletIdle", "assets/Bullet/Bullets/1/", 2, 10f, true);
+                    currentAnimation = idleAnimation;
             }
             else if (Player.ship2)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 2; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Bullet/Bullets/2/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 10f, true);
+                idleAnimation = Animator.CreateAnimation("Ship2BulletIdle", "assets/Bullet/Bullets/2/", 2, 10f, true);
                 currentAnimation = idleAnimation;
             }
             else if (Player.ship3)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 2; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Bullet/Bullets/3/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 10f, true);
+                idleAnimation = Animator.CreateAnimation("Ship3BulletIdle", "assets/Bullet/Bullets/3/", 2, 10f, true);
                 currentAnimation = idleAnimation;
             }
         }

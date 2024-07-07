@@ -14,12 +14,12 @@ namespace MyGame
         public PlayerController controller;
         private PlayerLimits playerLimits;
         private CollisionHandler collisionHandler;
-        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0,0)); 
+        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0));
         private Vector2 originalPosition;
 
         private DateTime timeLastShoot;
         private float timeBetweenShoots = 1f;
-        private GenericPool<Bullet> bulletPool; 
+        private GenericPool<Bullet> bulletPool;
 
         public Shield shield;
         public PowerUp powerUp;
@@ -90,35 +90,17 @@ namespace MyGame
         {
             if (ship1)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 4; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Idle/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship1Idle", "assets/Ship/Ships/Ship1/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Idle/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship2Idle", "assets/Ship/Ships/Ship2/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Idle/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship3Idle", "assets/Ship/Ships/Ship3/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
@@ -126,35 +108,17 @@ namespace MyGame
         {
             if (ship1)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Left/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship1Left", "assets/Ship/Ships/Ship1/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Left/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship2Left", "assets/Ship/Ships/Ship2/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Left/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship3Left", "assets/Ship/Ships/Ship3/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
@@ -162,35 +126,17 @@ namespace MyGame
         {
             if (ship1)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship1/Right/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship1Right", "assets/Ship/Ships/Ship1/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship2)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship2/Right/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship2Right", "assets/Ship/Ships/Ship2/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
             else if (ship3)
             {
-                List<IntPtr> idleTextures = new List<IntPtr>();
-                for (int i = 0; i < 3; i++)
-                {
-                    IntPtr frame = Engine.LoadImage($"assets/Ship/Ships/Ship3/Right/{i}.png");
-                    idleTextures.Add(frame);
-                }
-                idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+                idleAnimation = Animator.CreateAnimation("Ship3Right", "assets/Ship/Ships/Ship3/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }

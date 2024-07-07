@@ -79,13 +79,7 @@ namespace MyGame
 
         private void CreateAnimations()
         {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 3; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/Shield/{i}.png");
-                idleTextures.Add(frame);
-            }
-            idleAnimation = new Animation("Idle", idleTextures, 20f, true);
+            idleAnimation = Animator.CreateAnimation("IdleShield", "assets/Shield/", 3, 20f, true);
             currentAnimation = idleAnimation;
         }
 

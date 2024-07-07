@@ -30,16 +30,8 @@ namespace MyGame
 
         private void CreateAnimations()
         {
-
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 4; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/FastAsteroid/{i}.png");
-                idleTextures.Add(frame);
-            }
-            idleAnimation = new Animation("Idle", idleTextures, 15f, true);
+            idleAnimation = Animator.CreateAnimation("Idle", "assets/FastAsteroid/", 4, 15f, true);
             currentAnimation = idleAnimation;
-
         }
     }
 }

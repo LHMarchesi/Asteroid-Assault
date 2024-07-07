@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="Animator.cs" />
     <Compile Include="AsteroidFactory.cs" />
     <Compile Include="BigAsteroid.cs" />
     <Compile Include="Bullet.cs" />

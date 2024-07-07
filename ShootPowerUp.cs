@@ -90,13 +90,7 @@ namespace MyGame
 
         private void CreateAnimations()
         {
-            List<IntPtr> idleTextures = new List<IntPtr>();
-            for (int i = 0; i < 1; i++)
-            {
-                IntPtr frame = Engine.LoadImage($"assets/BulletPU/{i}.png");
-                idleTextures.Add(frame);
-            }
-            idleAnimation = new Animation("Idle", idleTextures, 40f, true);
+            idleAnimation = Animator.CreateAnimation("IdleBulletPU", "assets/BulletPU/", 1, 40f, true);
             currentAnimation = idleAnimation;
         }
     }
