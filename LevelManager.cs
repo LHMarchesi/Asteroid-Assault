@@ -14,7 +14,6 @@ namespace MyGame
     {
         private SpawnHandler spawnHandler = new SpawnHandler();
         public List<GameObject> GameObjects = new List<GameObject>();
-
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
 
@@ -25,18 +24,8 @@ namespace MyGame
 
         public Time _time;
 
-        // Escenas de juego
-        public IntPtr winScreen = Engine.LoadImage("assets/Win.png");
-        public IntPtr loseScreen = Engine.LoadImage("assets/Lose.png");
-        public IntPtr gameScreen = Engine.LoadImage("assets/BackGround.jpg");
-        public IntPtr menuScreen = Engine.LoadImage("assets/MainMenu.jpg");
-        public IntPtr pauseScreen = Engine.LoadImage("assets/Pause.jpg");
-        public IntPtr skinScreen = Engine.LoadImage("assets/SkinSelector.jpg");
-
-        //Herramientas Seleccion Skin
-        public IntPtr boxSelector = Engine.LoadImage("assets/BoxSelector.png");
-        public Vector2 skin1 = new Vector2(20,115);
-
+        
+    
         //Escudo
         public IntPtr shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
 
@@ -44,7 +33,7 @@ namespace MyGame
         public void Initialize()
         {
             _time.Initialize();
-
+           
             if (Player.ship1)
             {
                 shieldIsPicked = Engine.LoadImage("assets/ShieldShip/0.png");
@@ -69,7 +58,6 @@ namespace MyGame
 
             spawnHandler.Spawner();
             _time.Update();
-
             backgroundY += backgroundSpeed;
         }
 
@@ -77,9 +65,9 @@ namespace MyGame
         {
             Engine.Clear();
 
-            Engine.Draw(gameScreen, 0, backgroundY, 1280, 4096);
+            Engine.Draw(ScreenManager.Instance.gameScreen, 0, backgroundY, 1280, 4096);
             player.Render();
-            
+
 
             if (Shield.IsPicked) // Si tiene el escudo
             {
@@ -103,7 +91,7 @@ namespace MyGame
         {
             Engine.Clear();
 
-            Engine.Draw(pauseScreen, 0, 0);
+            Engine.Draw(ScreenManager.Instance.pauseScreen, 0, 0);
 
             Engine.Show();
         }

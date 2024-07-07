@@ -30,7 +30,7 @@ namespace MyGame
 
         private void CreateAnimations()
         {
-            idleAnimation = Animator.CreateAnimation("Idle", "assets/FastAsteroid/", 4, 15f, true);
+            idleAnimation = Animator.CreateAnimation("FastAsteroidIdle", "assets/FastAsteroid/", 4, 15f, true);
             currentAnimation = idleAnimation;
         }
     }

@@ -60,6 +60,7 @@
     <Compile Include="ObjectsMovement.cs" />
     <Compile Include="PowerUp.cs" />
     <Compile Include="PowerUpFactory.cs" />
+    <Compile Include="ScreenManager.cs" />
     <Compile Include="SlowAsteroid.cs" />
     <Compile Include="SpawnHandler.cs" />
     <Compile Include="GameObject.cs" />
@@ -176,6 +177,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Asteroid\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Music\Level1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\Music\MainMenu.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Pause.jpg">

@@ -575,3 +575,5 @@ A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Ship\Ships\Ship3\
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Ship\Ships\Ship3\Right\1.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Ship\Ships\Ship3\Right\2.png
 A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\SkinSelector.jpg
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Music\Level1.wav
+A:\ProyectoC#\Proyecto(21_5)\Asteroid-Assault\bin\Debug\assets\Music\MainMenu.wav

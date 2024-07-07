@@ -11,7 +11,9 @@ public class Sound
     // Constructor a partir de un nombre de fichero
     public Sound(string nombreFichero)
     {
+      
         pointer = SdlMixer.Mix_LoadMUS(nombreFichero);
+        
     }
 
     // Reproducir una vez

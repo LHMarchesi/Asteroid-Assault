@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tao.Sdl;
 
 namespace MyGame
 {
@@ -16,9 +17,11 @@ namespace MyGame
         static public GameStatus gameStart = GameStatus.menu;
 
         private static GameManager instance;
+        private ScreenManager screenManager;
         private LevelManager levelManager;
-        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0));
+               
         public LevelManager LevelManager => levelManager;
+        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0)); //☻
 
         public static GameManager Instance
         {
@@ -56,21 +59,21 @@ namespace MyGame
 
                     if (Engine.KeyPress(Engine.KEY_1)) 
                     {
-                        levelManager.skin1.x = 20;
+                        ScreenManager.Instance.skin1.x = 20;
                         Player.ship1 = true;
                         Player.ship2 = false;
                         Player.ship3 = false;
                     }
                     if (Engine.KeyPress(Engine.KEY_2)) 
                     {
-                        levelManager.skin1.x = 385;
+                        ScreenManager.Instance.skin1.x = 385;
                         Player.ship1 = false;
                         Player.ship2 = true;
                         Player.ship3 = false;
                     }
                     if (Engine.KeyPress(Engine.KEY_3)) 
                     {
-                        levelManager.skin1.x = 760;
+                        ScreenManager.Instance.skin1.x = 760;
                         Player.ship1 = false;
                         Player.ship2 = false;
                         Player.ship3 = true;
@@ -78,6 +81,7 @@ namespace MyGame
                     if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
                         Initialize();
+                        Console.WriteLine("Juego emepzo");
                         gameStart = GameStatus.game;
                     }
 
@@ -86,6 +90,7 @@ namespace MyGame
                 case GameStatus.game:
 
                     levelManager.Update();
+
                     if (Engine.KeyPress(Engine.KEY_ESC))  
                     {
                         gameStart = GameStatus.pause;
@@ -117,9 +122,9 @@ namespace MyGame
                     {
                         Initialize();
                         gameStart = GameStatus.game;
-                        shootPowerUp.Reset();
-                        Shield.IsPicked = false;
-                        SpeedUp.isPicked = false;
+                        shootPowerUp.Reset();  // Quizas utilizar un evento? 
+                        Shield.IsPicked = false; //
+                        SpeedUp.isPicked = false; //
                     }
                     if (Engine.KeyPress(Engine.KEY_X))
                     {
@@ -133,17 +138,17 @@ namespace MyGame
         {
             switch (gameStart)
             {
-                case GameStatus.menu:
+                case GameStatus.menu: 
 
                     Engine.Clear();
-                    Engine.Draw(levelManager.menuScreen, 0, 0);
+                    Engine.Draw(ScreenManager.Instance.menuScreen, 0, 0);  // Utilizar ScreenManager para la carga de escenas ?
                     Engine.Show();
                     break;
 
                 case GameStatus.skinselector:
                     Engine.Clear();
-                    Engine.Draw(levelManager.skinScreen, 0, 0);
-                    Engine.Draw(levelManager.boxSelector, levelManager.skin1.x, levelManager.skin1.y);
+                    Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0); //
+                    Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.skin1.x, ScreenManager.Instance.skin1.y);//
                     Engine.Show();
                      break;
 
@@ -160,14 +165,14 @@ namespace MyGame
                 case GameStatus.win:
 
                     Engine.Clear();
-                    Engine.Draw(levelManager.winScreen, 0, 0);
+                    Engine.Draw(ScreenManager.Instance.winScreen, 0, 0);//
                     Engine.Show();
                     break;
 
                 case GameStatus.lose:
 
                     Engine.Clear();
-                    Engine.Draw(levelManager.loseScreen, 0, 0);
+                    Engine.Draw(ScreenManager.Instance.loseScreen, 0, 0);//
                     Engine.Show();
                     break;
             }
