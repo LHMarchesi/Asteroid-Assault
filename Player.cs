@@ -14,8 +14,8 @@ namespace MyGame
         public PlayerController controller;
         private PlayerLimits playerLimits;
         private CollisionHandler collisionHandler;
-        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0));
         private Vector2 originalPosition;
+        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0)); //?
 
         private DateTime timeLastShoot;
         private float timeBetweenShoots = 1f;
@@ -27,32 +27,52 @@ namespace MyGame
         static private Animation idleAnimation;
 
         public bool candie = true;
-        static public bool ship1 = true;
-        static public bool ship2 = false;
-        static public bool ship3 = false;
+        static public bool shipBlue = true;
+        static public bool shipRed = false;
+        static public bool shipGreen = false;
 
         public Player(Vector2 position) : base(position)
         {
             playerLimits = new PlayerLimits(this);
             controller = new PlayerController(transform);
             collisionHandler = new CollisionHandler(this);
+
             originalPosition = position;
-            bulletPool = new GenericPool<Bullet>(8, () => new Bullet(new Vector2(Transform.Position.x, Transform.Position.y + Transform.Scale.y)));
             onDestroy += ResetPosition;
+
             IdleAnimation();
+
+            bulletPool = new GenericPool<Bullet>(8, () => new Bullet(new Vector2(Transform.Position.x, Transform.Position.y + Transform.Scale.y)));
         }
 
         public override void Update()
         {
             base.Update();
             controller.GetInputs();
-
             collisionHandler.CheckCollisions();
             playerLimits.CheckLimits();
+        }
 
-            if (Time.timeElapse > Time.winTime)
+        public override void Render()
+        {
+            base.Render();
+
+            if (Shield.IsPicked) // Si tiene el escudo
             {
-                GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
+                if (shipBlue)
+                {
+                    Shield.shieldImage = Engine.LoadImage("assets/ShieldShip/0.png");
+                }
+                else if (shipRed)
+                {
+                    Shield.shieldImage = Engine.LoadImage("assets/ShieldShip/1.png");
+                }
+                else if (shipGreen)
+                {
+                    Shield.shieldImage = Engine.LoadImage("assets/ShieldShip/2.png");
+                }
+
+                Engine.Draw(Shield.shieldImage, transform.Position.x - 25, transform.Position.y - 25);
             }
         }
 
@@ -78,7 +98,6 @@ namespace MyGame
         public void Destroy()
         {
             onDestroy?.Invoke(this);
-            shootPowerUp.Reset();
         }
 
         private void ResetPosition(Player player)
@@ -88,53 +107,55 @@ namespace MyGame
 
         public void IdleAnimation()
         {
-            if (ship1)
+            if (shipBlue)
             {
                 idleAnimation = Animator.CreateAnimation("Ship1Idle", "assets/Ship/Ships/Ship1/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship2)
+            else if (shipRed)
             {
                 idleAnimation = Animator.CreateAnimation("Ship2Idle", "assets/Ship/Ships/Ship2/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship3)
+            else if (shipGreen)
             {
                 idleAnimation = Animator.CreateAnimation("Ship3Idle", "assets/Ship/Ships/Ship3/Idle/", 4, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
+
         public void LeftAnimation()
         {
-            if (ship1)
+            if (shipBlue)
             {
                 idleAnimation = Animator.CreateAnimation("Ship1Left", "assets/Ship/Ships/Ship1/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship2)
+            else if (shipRed)
             {
                 idleAnimation = Animator.CreateAnimation("Ship2Left", "assets/Ship/Ships/Ship2/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship3)
+            else if (shipGreen)
             {
                 idleAnimation = Animator.CreateAnimation("Ship3Left", "assets/Ship/Ships/Ship3/Left/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
         }
+
         public void RightAnimation()
         {
-            if (ship1)
+            if (shipBlue)
             {
                 idleAnimation = Animator.CreateAnimation("Ship1Right", "assets/Ship/Ships/Ship1/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship2)
+            else if (shipRed)
             {
                 idleAnimation = Animator.CreateAnimation("Ship2Right", "assets/Ship/Ships/Ship2/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (ship3)
+            else if (shipGreen)
             {
                 idleAnimation = Animator.CreateAnimation("Ship3Right", "assets/Ship/Ships/Ship3/Right/", 3, 20f, true);
                 currentAnimation = idleAnimation;

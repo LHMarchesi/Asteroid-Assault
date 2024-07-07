@@ -19,14 +19,14 @@ namespace MyGame
         public static string totalShootstxt = "0";
         private int powerUpSpeed = 5;
         private int maxShoots = 4;
-        static public bool canShoot = false;
+        static public bool isPicked = false;
 
         public ShootPowerUp(Vector2 position) : base(position)
         {
             transform = new Transform(position, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, powerUpSpeed);
-            ResetShoot += ResetValues;
+            
         }
 
         public override void Update()
@@ -41,25 +41,20 @@ namespace MyGame
 
         public void PickUp()
         {
-            canShoot = true;
+            isPicked = true;
             Acumulable();
-        }
-
-        public void Reset()
-        {
-            ResetShoot?.Invoke(this);
-            canShoot = false;
         }
 
         private void ResetValues(ShootPowerUp shootPowerUp)
         {
+            isPicked = false;
             totalShoots = 0;
             totalShootstxt = totalShoots.ToString();
         }
 
         public void Acumulable()
         {
-            if (canShoot)
+            if (isPicked)
             {
                 if (totalShoots < maxShoots)
                 {
@@ -80,11 +75,11 @@ namespace MyGame
 
             if (totalShoots <= 0)
             {
-                canShoot = false;
+                isPicked = false;
             }
             else
             {
-                canShoot = true;
+                isPicked = true;
             }
         }
 

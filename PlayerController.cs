@@ -44,7 +44,7 @@ namespace MyGame
                 GameManager.Instance.LevelManager.Player.IdleAnimation();
             }
 
-            if (Engine.KeyPress(Engine.KEY_ESP) && ShootPowerUp.canShoot == true)
+            if (Engine.KeyPress(Engine.KEY_ESP) && ShootPowerUp.isPicked == true)
             {
                 GameManager.Instance.LevelManager.Player.Shoot();
             }
@@ -55,6 +55,13 @@ namespace MyGame
             this.speed += speed;
             speedBackwards += speed;
             LevelManager.backgroundSpeed += 0.1f;
+        }
+
+        public void ResetSpeed()
+        {
+            this.speed = 10;
+            this.speedBackwards = 8;
+            LevelManager.backgroundSpeed = 1f;
         }
 
     }

@@ -17,12 +17,10 @@ namespace MyGame
         static public GameStatus gameStart = GameStatus.menu;
 
         private static GameManager instance;
-        private ScreenManager screenManager;
         private LevelManager levelManager;
                
         public LevelManager LevelManager => levelManager;
-        private ShootPowerUp shootPowerUp = new ShootPowerUp(new Vector2(0, 0)); //☻
-
+  
         public static GameManager Instance
         {
             get
@@ -59,24 +57,24 @@ namespace MyGame
 
                     if (Engine.KeyPress(Engine.KEY_1)) 
                     {
-                        ScreenManager.Instance.skin1.x = 20;
-                        Player.ship1 = true;
-                        Player.ship2 = false;
-                        Player.ship3 = false;
+                        ScreenManager.Instance.boxPosition.x = 20;
+                        Player.shipBlue = true;
+                        Player.shipRed = false;
+                        Player.shipGreen = false;
                     }
                     if (Engine.KeyPress(Engine.KEY_2)) 
                     {
-                        ScreenManager.Instance.skin1.x = 385;
-                        Player.ship1 = false;
-                        Player.ship2 = true;
-                        Player.ship3 = false;
+                        ScreenManager.Instance.boxPosition.x = 385;
+                        Player.shipBlue = false;
+                        Player.shipRed = true;
+                        Player.shipGreen = false;
                     }
                     if (Engine.KeyPress(Engine.KEY_3)) 
                     {
-                        ScreenManager.Instance.skin1.x = 760;
-                        Player.ship1 = false;
-                        Player.ship2 = false;
-                        Player.ship3 = true;
+                        ScreenManager.Instance.boxPosition.x = 760;
+                        Player.shipBlue = false;
+                        Player.shipRed = false;
+                        Player.shipGreen = true;
                     }
                     if (Engine.KeyPress(Engine.KEY_ESP)) 
                     {
@@ -122,9 +120,7 @@ namespace MyGame
                     {
                         Initialize();
                         gameStart = GameStatus.game;
-                        shootPowerUp.Reset();  // Quizas utilizar un evento? 
-                        Shield.IsPicked = false; //
-                        SpeedUp.isPicked = false; //
+                        
                     }
                     if (Engine.KeyPress(Engine.KEY_X))
                     {
@@ -141,14 +137,14 @@ namespace MyGame
                 case GameStatus.menu: 
 
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.menuScreen, 0, 0);  // Utilizar ScreenManager para la carga de escenas ?
+                    Engine.Draw(ScreenManager.Instance.menuScreen, 0, 0); 
                     Engine.Show();
                     break;
 
                 case GameStatus.skinselector:
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0); //
-                    Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.skin1.x, ScreenManager.Instance.skin1.y);//
+                    Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0); 
+                    Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.boxPosition.x, ScreenManager.Instance.boxPosition.y);//
                     Engine.Show();
                      break;
 
@@ -165,14 +161,14 @@ namespace MyGame
                 case GameStatus.win:
 
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.winScreen, 0, 0);//
+                    Engine.Draw(ScreenManager.Instance.winScreen, 0, 0);
                     Engine.Show();
                     break;
 
                 case GameStatus.lose:
 
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.loseScreen, 0, 0);//
+                    Engine.Draw(ScreenManager.Instance.loseScreen, 0, 0);
                     Engine.Show();
                     break;
             }

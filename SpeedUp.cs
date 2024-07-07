@@ -9,6 +9,8 @@ namespace MyGame
 {
     public class SpeedUp : PowerUp, IPickuppeable 
     {
+        public event Action<SpeedUp> ResetSpeedUp;
+
         private Animation idleAnimation;
         private ObjectsMovement objectsMovement;
 
@@ -22,16 +24,8 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(pos, new Vector2(0, 0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
-         
-
+            ResetSpeedUp += ResetValues;
         }
-
-        public void PickUp()
-        {
-            GameManager.Instance.LevelManager.Player.controller.ChangeSpeed(newSpeed);
-            isPicked = true;
-        }
-
         public override void Update()
         {
             base.Update();
@@ -40,6 +34,12 @@ namespace MyGame
             {
                 GameManager.Instance.LevelManager.GameObjects.Remove(this);
             }
+        }
+
+        public void PickUp()
+        {
+            GameManager.Instance.LevelManager.Player.controller.ChangeSpeed(newSpeed);
+            isPicked = true;
         }
 
         private void CreateAnimations()
@@ -53,5 +53,18 @@ namespace MyGame
             idleAnimation = new Animation("Idle", idleTextures, 20f, true);
             currentAnimation = idleAnimation;
         }
+
+        public void Reset()
+        {
+            ResetSpeedUp?.Invoke(this);
+            isPicked = false;
+            ResetSpeedUp -= ResetValues;
+        }
+
+        private void ResetValues(SpeedUp speedUp)
+        {
+            GameManager.Instance.LevelManager.Player.controller.ResetSpeed();
+        }
+
     }
 }

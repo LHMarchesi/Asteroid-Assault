@@ -49,17 +49,17 @@ namespace MyGame
 
         private void CreateAnimations()
         {
-            if (Player.ship1)
+            if (Player.shipBlue)
             {
                     idleAnimation = Animator.CreateAnimation("Ship1BulletIdle", "assets/Bullet/Bullets/1/", 2, 10f, true);
                     currentAnimation = idleAnimation;
             }
-            else if (Player.ship2)
+            else if (Player.shipRed)
             {
                 idleAnimation = Animator.CreateAnimation("Ship2BulletIdle", "assets/Bullet/Bullets/2/", 2, 10f, true);
                 currentAnimation = idleAnimation;
             }
-            else if (Player.ship3)
+            else if (Player.shipGreen)
             {
                 idleAnimation = Animator.CreateAnimation("Ship3BulletIdle", "assets/Bullet/Bullets/3/", 2, 10f, true);
                 currentAnimation = idleAnimation;

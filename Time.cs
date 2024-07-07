@@ -10,7 +10,7 @@ namespace MyGame
     {
         private static DateTime _startTime;
 
-        public static float winTime =  125;
+        public static float winTime =  30;
 
         private static float _lastTimeFrame;
         public static float DeltaTime;

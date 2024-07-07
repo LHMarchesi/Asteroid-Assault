@@ -14,26 +14,37 @@ namespace MyGame
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
 
+        public int totalShield { get; private set; }
+
         public static bool IsPicked = false;
         private int shieldSpeed = 5;
         private int maxShield = 2;
 
-        public static int totalShield;
         public static string totalShieldtxt = "0";
+
+        public static IntPtr shieldImage;
 
         public Shield(Vector2 pos) : base(pos)
         {
             transform = new Transform(pos, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);
-           
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            objectsMovement.MoveDown();
+            if (transform.Position.y >= 1000)
+            {
+                GameManager.Instance.LevelManager.GameObjects.Remove(this);
+            }
         }
 
         public void PickUp()
         {
             IsPicked = true;
             Acumulable();
-
         }
 
         public void Acumulable()
@@ -64,17 +75,13 @@ namespace MyGame
             {
                 IsPicked = true;
             }
-
         }
 
-        public override void Update()
+        private void ResetValues()
         {
-            base.Update();
-            objectsMovement.MoveDown();
-            if (transform.Position.y >= 1000)
-            {
-                GameManager.Instance.LevelManager.GameObjects.Remove(this);
-            }
+            IsPicked = false;
+            totalShield = 0;
+            totalShieldtxt = totalShield.ToString();
         }
 
         private void CreateAnimations()
@@ -82,6 +89,5 @@ namespace MyGame
             idleAnimation = Animator.CreateAnimation("IdleShield", "assets/Shield/", 3, 20f, true);
             currentAnimation = idleAnimation;
         }
-
     }
 }
