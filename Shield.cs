@@ -14,7 +14,7 @@ namespace MyGame
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
 
-        public int totalShield { get; private set; }
+        public static int totalShield { get; private set; }
 
         public static bool IsPicked = false;
         private int shieldSpeed = 5;
@@ -77,7 +77,7 @@ namespace MyGame
             }
         }
 
-        private void ResetValues()
+        public static void Reset()
         {
             IsPicked = false;
             totalShield = 0;

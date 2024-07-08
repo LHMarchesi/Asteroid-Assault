@@ -13,9 +13,9 @@ namespace MyGame
 
         private Animation idleAnimation;
         ObjectsMovement objectsMovement;
-        public event Action<ShootPowerUp> ResetShoot;
 
-        public static int totalShoots;
+        public static int totalShoots { get; private set; }
+
         public static string totalShootstxt = "0";
         private int powerUpSpeed = 5;
         private int maxShoots = 4;
@@ -26,7 +26,6 @@ namespace MyGame
             transform = new Transform(position, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, powerUpSpeed);
-            
         }
 
         public override void Update()
@@ -43,9 +42,11 @@ namespace MyGame
         {
             isPicked = true;
             Acumulable();
+            Player.OnShoot += restarAcumulable;
+            Console.WriteLine("Subscribed to OnShoot event.");
         }
 
-        private void ResetValues(ShootPowerUp shootPowerUp)
+        public static void Reset()
         {
             isPicked = false;
             totalShoots = 0;
@@ -72,7 +73,7 @@ namespace MyGame
         {
             totalShoots--;
             totalShootstxt = totalShoots.ToString();
-
+            Console.WriteLine($"restarAcumulable called. totalShoots: {totalShoots}");
             if (totalShoots <= 0)
             {
                 isPicked = false;
@@ -81,6 +82,11 @@ namespace MyGame
             {
                 isPicked = true;
             }
+        }
+
+        public override void Destroy()
+        {
+            base.Destroy();
         }
 
         private void CreateAnimations()
