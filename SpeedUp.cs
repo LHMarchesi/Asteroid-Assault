@@ -24,7 +24,6 @@ namespace MyGame
             CreateAnimations();
             transform = new Transform(pos, new Vector2(0, 0));
             objectsMovement = new ObjectsMovement(transform, MovementSpeed);
-            ResetSpeedUp += ResetValues;
         }
         public override void Update()
         {
@@ -56,15 +55,8 @@ namespace MyGame
 
         public void Reset()
         {
-            ResetSpeedUp?.Invoke(this);
+            GameManager.Instance.LevelManager.Player.controller.ResetSpeed(); GameManager.Instance.LevelManager.Player.controller.ResetSpeed();
             isPicked = false;
-            ResetSpeedUp -= ResetValues;
         }
-
-        private void ResetValues(SpeedUp speedUp)
-        {
-            GameManager.Instance.LevelManager.Player.controller.ResetSpeed();
-        }
-
     }
 }

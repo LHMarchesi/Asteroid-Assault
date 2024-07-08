@@ -52,9 +52,9 @@ namespace MyGame
                     Shield.IsPicked = false;
                     player.candie = true;
 
-                    if (player.shield != null)
+                    if (Player.shield != null)
                     {
-                        player.shield.restarAcumulable();
+                        Player.shield.restarAcumulable();
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace MyGame
 
                 if (pickupobj is Shield shieldPicked)
                 {
-                    player.shield = shieldPicked;
+                    Player.shield = shieldPicked;
                     shieldPicked = (Shield)gameObject;
                     shieldPicked.Destroy();
                 }
