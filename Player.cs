@@ -11,7 +11,6 @@ namespace MyGame
     public class Player : GameObject
     {
         public event Action<Player> onDestroy;
-        public static event Action OnShoot;
 
         public PlayerController controller;
         private PlayerLimits playerLimits;
@@ -60,7 +59,7 @@ namespace MyGame
         {
             base.Render();
 
-            if (Shield.IsPicked) // Si tiene el escudo
+            if (shield != null) // Si tiene el escudo
             {
                 if (shipBlue)
                 {
@@ -84,17 +83,22 @@ namespace MyGame
             DateTime currentTime = DateTime.Now;
             if ((currentTime - timeLastShoot).TotalSeconds >= timeBetweenShoots)
             {
-                Bullet bullet = bulletPool.GetObject();
-                Bullet bullet2 = bulletPool.GetObject();
-                if (bullet != null && bullet2 != null)
+                if (shootPowerUp != null && PowerUpManager.shootPUCollected.Count >= 1)
                 {
-                    bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60));
-                    bullet2.Transform.SetPosition(new Vector2(transform.Position.x + 20, transform.Position.y + 60));
-                    GameManager.Instance.LevelManager.GameObjects.Add(bullet);
-                    GameManager.Instance.LevelManager.GameObjects.Add(bullet2);
-                    timeLastShoot = currentTime;
 
-                    OnShoot?.Invoke();
+                    Bullet bullet = bulletPool.GetObject();
+                    Bullet bullet2 = bulletPool.GetObject();
+                    if (bullet != null && bullet2 != null)
+                    {
+                        bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60));
+                        bullet2.Transform.SetPosition(new Vector2(transform.Position.x + 20, transform.Position.y + 60));
+                        GameManager.Instance.LevelManager.GameObjects.Add(bullet);
+                        GameManager.Instance.LevelManager.GameObjects.Add(bullet2);
+                        timeLastShoot = currentTime;
+
+                        PowerUpManager.shootPUCollected.Remove(shootPowerUp);
+                        shootPowerUp = PowerUpManager.shootPUCollected.Count > 0 ? PowerUpManager.shootPUCollected[0] : null;
+                    }
                 }
             }
         }
@@ -107,13 +111,6 @@ namespace MyGame
         private void ResetPosition(Player player)
         {
             transform.SetPosition(originalPosition);
-        }
-
-        private void ResetPowerUps(LevelManager levelManager)
-        {
-            Shield.Reset();
-            ShootPowerUp.Reset();
-            Shield.Reset();
         }
 
         public void IdleAnimation()

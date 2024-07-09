@@ -39,7 +39,7 @@ namespace MyGame
         {
             if (gameObject is Asteroid)
             {
-                if (!Shield.IsPicked) // Lose Condition
+                if (player.candie) // Lose Condition
                 {
                     Asteroid asteroid = (Asteroid)gameObject;
                     asteroid.Destroy();
@@ -49,12 +49,30 @@ namespace MyGame
                 else
                 {
                     GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
-                    Shield.IsPicked = false;
-                    player.candie = true;
 
-                    if (Player.shield != null)
+                    if (PowerUpManager.shieldCollected != null)
                     {
-                        Player.shield.restarAcumulable();
+                        Shield shieldToRemove = null;
+
+                        // Encontrar el Shield asociado al jugador
+                        foreach (Shield shield in PowerUpManager.shieldCollected)
+                        {
+                            if (shield == Player.shield)
+                            {
+                                shieldToRemove = shield;
+                                break;
+                            }
+                        }
+
+                        if (shieldToRemove != null)
+                        {
+                            PowerUpManager.shieldCollected.Remove(shieldToRemove);
+                            Player.shield = PowerUpManager.shieldCollected.Count > 0 ? PowerUpManager.shieldCollected[0] : null; // Después de eliminar un Shield, actualiza Player.shield al siguiente Shield en la lista
+                            if (Player.shield == null)
+                            {
+                                player.candie = true;
+                            }
+                        }
                     }
                 }
             }
@@ -65,15 +83,17 @@ namespace MyGame
 
                 if (pickupobj is Shield shieldPicked)
                 {
+                    player.candie = false;
                     Player.shield = shieldPicked;
                     shieldPicked = (Shield)gameObject;
                     shieldPicked.Destroy();
                 }
 
-                if (pickupobj is ShootPowerUp)
+                if (pickupobj is ShootPowerUp shootPowerUpPicked)
                 {
-                    ShootPowerUp shooshootPowerUp = (ShootPowerUp)gameObject;
-                    shooshootPowerUp.Destroy();
+                    ShootPowerUp shootPowerUp = (ShootPowerUp)gameObject;
+                    Player.shootPowerUp = shootPowerUpPicked;
+                    shootPowerUp.Destroy();
                 }
 
                 if (pickupobj is SpeedUp)

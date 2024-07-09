@@ -17,6 +17,7 @@ namespace MyGame
 
         public List<GameObject> GameObjects = new List<GameObject>();
         private SpawnHandler spawnHandler = new SpawnHandler();
+        private PowerUpManager powerUpManager = new PowerUpManager();
 
         private Player player = new Player(new Vector2(565, 520));
         public Player Player => player;
@@ -24,14 +25,15 @@ namespace MyGame
         private float backgroundY = -3376;
         static public float backgroundSpeed = 1f;
 
+        public string totalShieldTxt = "0";
+
         Font font = new Font("assets/Fonts/Fuente.ttf", 24);
         public Time _time;
 
-
-        public void Initialize()
+         public void Initialize()
         {
             _time.Initialize();
-            //OnLevelStart.Invoke(this);
+            powerUpManager.ResetPowerUps();
         }
 
         public void Update()
@@ -39,6 +41,8 @@ namespace MyGame
             player.Update();
             _time.Update();
             spawnHandler.Spawner();
+            powerUpManager.Handler();
+          
 
             backgroundY += backgroundSpeed;
 
@@ -68,8 +72,8 @@ namespace MyGame
             }
 
             Engine.DrawText($"{Math.Max(0, (int)Time.timeElapse)}", 640, 10, 255, 255, 255, font);
-            Engine.DrawText("Escudos totales : " + Shield.totalShieldtxt, 10, 10, 255, 255, 255, font);
-            Engine.DrawText("Balas totales : " + ShootPowerUp.totalShootstxt, 1000, 10, 255, 255, 255, font);
+            Engine.DrawText("Escudos totales : " + PowerUpManager.totalShieldtxt, 10, 10, 255, 255, 255, font);
+            Engine.DrawText("Balas totales : " + PowerUpManager.shootTxt, 1000, 10, 255, 255, 255, font);
             Engine.Show();
         }
 

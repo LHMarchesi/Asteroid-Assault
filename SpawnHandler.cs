@@ -14,9 +14,9 @@ namespace MyGame
         private float timeBetweenSlowAsteroids = 3f;
         private float timeBetweenFastAsteroids = 5f;
         private float timeBetweenBigAsteroids = 15f;
-        private float timeBetweenShied = 25f;
+        private float timeBetweenShied = 5f;
         private float timeBetweenSpeedUp = 13f;
-        private float timeBetweenShootPU = 10f;
+        private float timeBetweenShootPU = 5f;
 
         GenericPool<Asteroid> slowAsteroidPool;
         GenericPool<Asteroid> fastAsteroidPool;
@@ -39,7 +39,7 @@ namespace MyGame
             fastAsteroidPool = new GenericPool<Asteroid>(15, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.fast));
             BigAsteroidPool = new GenericPool<Asteroid>(6, () => AsteroidFactory.CreateAsteroid(ObjectsMovement.SetRandomPosition(), AsteroidType.big));
 
-            shieldPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shield));
+            shieldPool = new GenericPool<PowerUp>(4, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shield));
             shootPowerUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.shoot));
             speedUpPool = new GenericPool<PowerUp>(2, () => PowerUpFactory.CreatePowerUp(ObjectsMovement.SetRandomPosition(), powerUpType.speedUp));
         }

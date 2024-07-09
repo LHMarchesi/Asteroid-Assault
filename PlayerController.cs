@@ -44,7 +44,7 @@ namespace MyGame
                 GameManager.Instance.LevelManager.Player.IdleAnimation();
             }
 
-            if (Engine.KeyPress(Engine.KEY_ESP) && ShootPowerUp.isPicked == true)
+            if (Engine.KeyPress(Engine.KEY_ESP))
             {
                 GameManager.Instance.LevelManager.Player.Shoot();
             }

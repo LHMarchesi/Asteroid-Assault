@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Shield : PowerUp, IPickuppeable, IAcumulabble
+    public class Shield : PowerUp, IPickuppeable
     {
         private ObjectsMovement objectsMovement;
         private Animation idleAnimation;
 
-        public static int totalShield { get; private set; }
 
-        public static bool IsPicked = false;
+        public int totalShield { get; private set; } = 0;
+        public int maxShield { get; private set; } = 2;
+        public static bool IsPicked { get; private set; }
+
         private int shieldSpeed = 5;
-        private int maxShield = 2;
 
-        public static string totalShieldtxt = "0";
+        public bool IsProcessed { get; set; }
 
         public static IntPtr shieldImage;
 
@@ -38,50 +39,13 @@ namespace MyGame
             if (transform.Position.y >= 1000)
             {
                 GameManager.Instance.LevelManager.GameObjects.Remove(this);
+                
             }
         }
-
         public void PickUp()
         {
             IsPicked = true;
-            Acumulable();
-        }
-
-        public void Acumulable()
-        {
-            if (IsPicked)
-            {
-                if (totalShield < maxShield)
-                {
-                    totalShield++;
-                    totalShieldtxt = totalShield.ToString();
-                }
-                if (totalShield == maxShield)
-                {
-                    totalShieldtxt = maxShield + " (Max)";
-                }
-            }
-        }
-
-        public void restarAcumulable()
-        {
-            totalShield--;
-            totalShieldtxt = totalShield.ToString();
-            if (totalShield == 0)
-            {
-                IsPicked = false;
-            }
-            else
-            {
-                IsPicked = true;
-            }
-        }
-
-        public static void Reset()
-        {
-            IsPicked = false;
-            totalShield = 0;
-            totalShieldtxt = totalShield.ToString();
+            PowerUpManager.shieldCollected.Add(this);
         }
 
         private void CreateAnimations()

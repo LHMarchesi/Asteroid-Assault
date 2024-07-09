@@ -18,9 +18,9 @@ namespace MyGame
 
         private static GameManager instance;
         private LevelManager levelManager;
-               
+
         public LevelManager LevelManager => levelManager;
-  
+
         public static GameManager Instance
         {
             get
@@ -46,7 +46,7 @@ namespace MyGame
             {
                 case GameStatus.menu:
 
-                    if (Engine.KeyPress(Engine.KEY_ESP)) 
+                    if (Engine.KeyPress(Engine.KEY_ESP))
                     {
                         Initialize();
                         gameStart = GameStatus.skinselector;
@@ -55,48 +55,47 @@ namespace MyGame
 
                 case GameStatus.skinselector:
 
-                    if (Engine.KeyPress(Engine.KEY_1)) 
+                    if (Engine.KeyPress(Engine.KEY_1))
                     {
                         ScreenManager.Instance.boxPosition.x = 20;
                         Player.shipBlue = true;
                         Player.shipRed = false;
                         Player.shipGreen = false;
                     }
-                    if (Engine.KeyPress(Engine.KEY_2)) 
+                    if (Engine.KeyPress(Engine.KEY_2))
                     {
                         ScreenManager.Instance.boxPosition.x = 385;
                         Player.shipBlue = false;
                         Player.shipRed = true;
                         Player.shipGreen = false;
                     }
-                    if (Engine.KeyPress(Engine.KEY_3)) 
+                    if (Engine.KeyPress(Engine.KEY_3))
                     {
                         ScreenManager.Instance.boxPosition.x = 760;
                         Player.shipBlue = false;
                         Player.shipRed = false;
                         Player.shipGreen = true;
                     }
-                    if (Engine.KeyPress(Engine.KEY_ESP)) 
+                    if (Engine.KeyPress(Engine.KEY_ESP))
                     {
                         Initialize();
-                        Console.WriteLine("Juego emepzo");
                         gameStart = GameStatus.game;
                     }
 
-                    break;  
+                    break;
 
                 case GameStatus.game:
 
                     levelManager.Update();
 
-                    if (Engine.KeyPress(Engine.KEY_ESC))  
+                    if (Engine.KeyPress(Engine.KEY_ESC))
                     {
                         gameStart = GameStatus.pause;
-                    } 
+                    }
                     break;
 
                 case GameStatus.win:
-                    if (Engine.KeyPress(Engine.KEY_ESP)) 
+                    if (Engine.KeyPress(Engine.KEY_ESP))
                     {
                         Initialize();
                         gameStart = GameStatus.game;
@@ -104,7 +103,7 @@ namespace MyGame
                     break;
 
                 case GameStatus.lose:
-                    if (Engine.KeyPress(Engine.KEY_ESP)) 
+                    if (Engine.KeyPress(Engine.KEY_ESP))
                     {
                         Initialize();
                         gameStart = GameStatus.game;
@@ -120,7 +119,7 @@ namespace MyGame
                     {
                         Initialize();
                         gameStart = GameStatus.game;
-                        
+
                     }
                     if (Engine.KeyPress(Engine.KEY_X))
                     {
@@ -134,19 +133,19 @@ namespace MyGame
         {
             switch (gameStart)
             {
-                case GameStatus.menu: 
+                case GameStatus.menu:
 
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.menuScreen, 0, 0); 
+                    Engine.Draw(ScreenManager.Instance.menuScreen, 0, 0);
                     Engine.Show();
                     break;
 
                 case GameStatus.skinselector:
                     Engine.Clear();
-                    Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0); 
+                    Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0);
                     Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.boxPosition.x, ScreenManager.Instance.boxPosition.y);//
                     Engine.Show();
-                     break;
+                    break;
 
                 case GameStatus.pause:
 
