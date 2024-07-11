@@ -50,7 +50,8 @@ namespace MyGame
                 {
                     GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
 
-                    if (PowerUpManager.shieldCollected != null)
+                    // Remover Shield
+                    if (PowerUpManager.shieldCollected != null)  
                     {
                         Shield shieldToRemove = null;
 
@@ -68,6 +69,7 @@ namespace MyGame
                         {
                             PowerUpManager.shieldCollected.Remove(shieldToRemove);
                             Player.shield = PowerUpManager.shieldCollected.Count > 0 ? PowerUpManager.shieldCollected[0] : null; // Después de eliminar un Shield, actualiza Player.shield al siguiente Shield en la lista
+                           
                             if (Player.shield == null)
                             {
                                 player.candie = true;

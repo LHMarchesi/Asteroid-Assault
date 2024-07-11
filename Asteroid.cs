@@ -13,9 +13,8 @@ namespace MyGame
     {
         public event Action<IPoolable> OnDestroy;
     
-        public Asteroid(Vector2 position, int speed) : base(position) 
+        public Asteroid(Vector2 position, int speed) : base(position)  
         {
-           
             transform = new Transform(position, new Vector2(75, 75));
             OnDestroy += RemoveAsteroid;
         }

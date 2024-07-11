@@ -42,11 +42,10 @@ namespace MyGame
             _time.Update();
             spawnHandler.Spawner();
             powerUpManager.Handler();
-          
-
+ 
             backgroundY += backgroundSpeed;
 
-            if (Time.timeElapse > Time.winTime)
+            if (Time.timeElapse > Time.winTime) // Win Condition
             {
                 GameManager.Instance.ChangeGameStatus(GameManager.GameStatus.win);
                 //OnLevelEnd.Invoke(this);

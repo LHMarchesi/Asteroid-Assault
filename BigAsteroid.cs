@@ -11,16 +11,17 @@ namespace MyGame
         private Animation idleAnimation;
         private ObjectsMovement objectsMovement;
 
-        public BigAsteroid(Vector2 position, int speed) : base(position, speed) // Construcrtor
+        public BigAsteroid(Vector2 position, int speed) : base(position, speed) 
         {
             CreateAnimations();
             transform = new Transform(position, new Vector2(75, 75));
             objectsMovement = new ObjectsMovement(transform, speed);
         }
 
-        public override void Update()
+        public override void Update() 
         {
             base.Update();
+
             objectsMovement.MoveDown();
             if (transform.Position.y >= 1000)
             {

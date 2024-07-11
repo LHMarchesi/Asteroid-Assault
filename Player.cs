@@ -85,9 +85,9 @@ namespace MyGame
             {
                 if (shootPowerUp != null && PowerUpManager.shootPUCollected.Count >= 1)
                 {
-
                     Bullet bullet = bulletPool.GetObject();
                     Bullet bullet2 = bulletPool.GetObject();
+
                     if (bullet != null && bullet2 != null)
                     {
                         bullet.Transform.SetPosition(new Vector2(transform.Position.x + Transform.Scale.x, transform.Position.y + 60));

@@ -8,7 +8,7 @@ namespace MyGame
 {
     public static class Animator
     {
-        public static Animation CreateAnimation(string name, string assetsPath, int frameCount, float speed, bool isLoopEnabled)
+        public static Animation CreateAnimation(string name, string assetsPath, int frameCount, float speed, bool isLoopEnabled) // Creador de animaciones
         {
             List<IntPtr> frames = new List<IntPtr>();
             for (int i = 0; i < frameCount; i++)

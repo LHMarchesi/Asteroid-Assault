@@ -29,7 +29,7 @@ namespace MyGame
             CheckCollitions();
         }
 
-        private void CheckCollitions()
+        private void CheckCollitions()  // Chequea colisiones  
         {
             for (int i = 0; i < GameManager.Instance.LevelManager.GameObjects.Count; i++)
             {
@@ -42,12 +42,16 @@ namespace MyGame
 
                 if (distanceX < sumHalfWidth && distanceY < sumHalfH) // Hay colisión
                 {
-                    HandleCollision(gameObject);
+                    if (gameObject is Asteroid)
+                    {
+                        GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
+                        OnDestroy.Invoke(this);
+                    }
                 }
             }
         }
 
-        private void CreateAnimations()
+        private void CreateAnimations() // Cambio de sprite, dependiendo la nave
         {
             if (Player.shipBlue)
             {
@@ -63,15 +67,6 @@ namespace MyGame
             {
                 idleAnimation = Animator.CreateAnimation("Ship3BulletIdle", "assets/Bullet/Bullets/3/", 2, 10f, true);
                 currentAnimation = idleAnimation;
-            }
-        }
-
-        private void HandleCollision(GameObject gameObject)
-        {
-            if (gameObject is Asteroid)
-            {
-                GameManager.Instance.LevelManager.GameObjects.Remove(gameObject);
-                GameManager.Instance.LevelManager.GameObjects.Remove(this);
             }
         }
 

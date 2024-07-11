@@ -16,7 +16,7 @@ namespace MyGame
 
 
         public int totalShield { get; private set; } = 0;
-        public int maxShield { get; private set; } = 2;
+        public int maxShield { get; private set; }
         public static bool IsPicked { get; private set; }
 
         private int shieldSpeed = 5;
@@ -27,6 +27,7 @@ namespace MyGame
 
         public Shield(Vector2 pos) : base(pos)
         {
+            maxShield = 2;
             transform = new Transform(pos, new Vector2(0, 0));
             CreateAnimations();
             objectsMovement = new ObjectsMovement(transform, shieldSpeed);

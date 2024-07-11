@@ -143,7 +143,7 @@ namespace MyGame
                 case GameStatus.skinselector:
                     Engine.Clear();
                     Engine.Draw(ScreenManager.Instance.skinScreen, 0, 0);
-                    Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.boxPosition.x, ScreenManager.Instance.boxPosition.y);//
+                    Engine.Draw(ScreenManager.Instance.boxSelector, ScreenManager.Instance.boxPosition.x, ScreenManager.Instance.boxPosition.y);
                     Engine.Show();
                     break;
 
