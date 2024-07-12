@@ -15,6 +15,8 @@ namespace MyGame
         public event Action<LevelManager> OnLevelStart;
         public event Action<LevelManager> OnLevelEnd;
 
+        private Sound music = new Sound("assets/Music/Level1.wav"); 
+
         public List<GameObject> GameObjects = new List<GameObject>();
         private SpawnHandler spawnHandler = new SpawnHandler();
         private PowerUpManager powerUpManager = new PowerUpManager();
@@ -34,6 +36,7 @@ namespace MyGame
         {
             _time.Initialize();
             powerUpManager.ResetPowerUps();
+            music.Play();
         }
 
         public void Update()

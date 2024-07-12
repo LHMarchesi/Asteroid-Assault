@@ -11,7 +11,7 @@ namespace MyGame
         private Animation idleAnimation;
         private ObjectsMovement objectsMovement;
 
-        public FastAsteroid(Vector2 position, int speed) : base(position, speed) // Construcrtor
+        public FastAsteroid(Vector2 position, int speed) : base(position, speed) 
         {
             CreateAnimations();
             transform = new Transform(position, new Vector2(75, 75));

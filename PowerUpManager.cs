@@ -14,7 +14,7 @@ namespace MyGame
 
         public static string totalShieldtxt = "0";
         public static string shootTxt = "0";
-        public void Handler()
+        public void Handler() // Añada los powerUps
         {
             totalShieldtxt = shieldCollected.Count.ToString();
             foreach (Shield shield in shieldCollected.ToList())
@@ -51,7 +51,7 @@ namespace MyGame
             }
         }
 
-        public void ResetPowerUps()
+        public void ResetPowerUps() // Reseteo de valores
         {
             Player.shield = null;
             shieldCollected.Clear();
